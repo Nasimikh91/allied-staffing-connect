@@ -88,12 +88,21 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <a
-                    href={link.href}
-                    className="text-gray-700 hover:text-primary-600 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-500 after:transition-all"
-                  >
-                    {link.name}
-                  </a>
+                  {link.name === "Home" ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-700 hover:text-primary-600 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-500 after:transition-all"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-700 hover:text-primary-600 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-500 after:transition-all"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </motion.li>
               ))}
               <motion.li
@@ -138,14 +147,25 @@ const Navbar = () => {
         {isOpen && (
           <div className="px-6 py-4 space-y-2 shadow-inner">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block py-3 text-gray-700 hover:text-primary-600 font-medium border-b border-gray-200"
-              >
-                {link.name}
-              </a>
+              link.name === "Home" ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-primary-600 font-medium border-b border-gray-200"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-primary-600 font-medium border-b border-gray-200"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
             <a
               href="/#contact"

@@ -6,15 +6,15 @@ import { ChevronDown } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-blue-50 to-white">
-      {/* Background image with increased prominence */}
+      {/* Background image with maximum visibility */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
           src="/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png"
           alt="Office background"
           className="absolute inset-0 w-full h-full object-cover object-center"
-          style={{ opacity: 0.8 }}
+          style={{ opacity: 1 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-white/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-white/50"></div>
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary-100 rounded-full filter blur-3xl opacity-30"></div>
         <div className="absolute bottom-0 left-10 w-72 h-72 bg-primary-100 rounded-full filter blur-3xl opacity-30"></div>
       </div>
