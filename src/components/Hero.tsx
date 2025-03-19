@@ -19,15 +19,14 @@ const Hero = () => {
           
           {/* Grid pattern overlay */}
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        
-          {/* Remove animated particles that were creating the gold dots */}
           
-          {/* Office environment elements - removing the box/table behind silhouettes */}
+          {/* Completely remove all particle elements and any related code */}
+          
+          {/* Office environment elements */}
           <div className="absolute inset-0">            
             {/* Professional team representation */}
             <div className="absolute bottom-0 left-0 right-0 flex justify-center">
               <div className="relative h-72 w-full max-w-5xl">
-                {/* Removed the stylized desk/table that was creating the line/box */}
                 
                 {/* Team silhouettes with glow effect */}
                 <div className="absolute bottom-0 left-0 right-0 flex justify-around items-end">
@@ -72,10 +71,6 @@ const Hero = () => {
                     <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/40 mx-auto"></div>
                   </motion.div>
                 </div>
-                
-                {/* Removed the conference room table effect */}
-                
-                {/* Removed the abstract computer/device representations */}
               </div>
             </div>
           </div>
@@ -85,7 +80,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]"></div>
       </div>
 
-      {/* Decorative elements */}
+      {/* Decorative elements - removing any small dots */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-primary-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-primary-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
 
