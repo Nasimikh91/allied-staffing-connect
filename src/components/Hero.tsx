@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -149,7 +148,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg text-gray-300 max-w-xl"
+              className="text-lg font-bold text-white max-w-xl"
             >
               At Allied Pro Staffing, we specialize in connecting the
               right people with the right opportunities, delivering tailored
