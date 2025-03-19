@@ -28,16 +28,16 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-          50: '#f0f7ff',
-          100: '#dcebfd',
-          200: '#bfd9fb',
-          300: '#94bff6',
-          400: '#629cf0',
-          500: '#4180e6',
-          600: '#2e64d9',
-          700: '#264ec3',
-          800: '#20419f',
-          900: '#233b7c',
+          50: '#faf6f0',
+          100: '#f5ead8',
+          200: '#edd4b0',
+          300: '#e5be88',
+          400: '#dca366',
+          500: '#d28b4a',
+          600: '#c3783e',
+          700: '#a15d34',
+          800: '#834b30',
+          900: '#6c3f2b',
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -62,7 +62,31 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				}
+				},
+        bronze: {
+          50: '#fbf7f2',
+          100: '#f5ead8',
+          200: '#edd4b0',
+          300: '#e5be88',
+          400: '#d9a064',
+          500: '#c7854a',
+          600: '#b46b3b',
+          700: '#955330',
+          800: '#7a472d',
+          900: '#653c27',
+        },
+        gold: {
+          50: '#fcfaf5',
+          100: '#faf0d7',
+          200: '#f5e1b0',
+          300: '#f0cf84',
+          400: '#e9b552',
+          500: '#e0982a',
+          600: '#cc7e22',
+          700: '#a85d1e',
+          800: '#884920',
+          900: '#713c1e',
+        }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -101,7 +125,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-pattern': 'linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url("/hero-bg.jpg")'
+        'hero-pattern': 'linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8))'
       }
 		}
 	},

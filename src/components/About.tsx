@@ -14,7 +14,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
@@ -23,13 +23,13 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-sm font-medium text-primary-600 px-3 py-1 bg-primary-50 rounded-full mb-5">
+            <span className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5">
               About Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Your Trusted Partner for Professional Staffing Solutions
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-300 mb-8">
               At Allied Professional Staffing, we bridge the gap between talented
               professionals and leading organizations. With years of industry
               experience, we understand the unique challenges of the modern
@@ -38,7 +38,7 @@ const About = () => {
             </p>
 
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Values</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Our Values</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {values.map((value, index) => (
                   <motion.div
@@ -49,8 +49,8 @@ const About = () => {
                     viewport={{ once: true }}
                     className="flex items-start"
                   >
-                    <CheckCircle className="h-5 w-5 text-primary-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-gray-700">{value}</span>
+                    <CheckCircle className="h-5 w-5 text-gold-400 mt-0.5 mr-2 flex-shrink-0" />
+                    <span className="text-gray-300">{value}</span>
                   </motion.div>
                 ))}
               </div>
@@ -64,7 +64,7 @@ const About = () => {
             >
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300"
               >
                 Get In Touch
               </a>
@@ -78,60 +78,60 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary-100 to-primary-50 rounded-3xl transform rotate-3"></div>
-            <div className="relative bg-white p-8 rounded-3xl shadow-lg">
-              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden mb-8 bg-gray-100">
-                <div className="w-full h-full bg-primary-100 rounded-xl flex items-center justify-center">
-                  <span className="text-primary-600 font-medium">Company Image</span>
+            <div className="absolute inset-0 bg-gradient-to-tr from-gold-900/20 to-gold-700/10 rounded-3xl transform rotate-3"></div>
+            <div className="relative bg-black p-8 rounded-3xl shadow-lg border border-gray-800">
+              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden mb-8 bg-gray-900">
+                <div className="w-full h-full bg-gray-900 rounded-xl flex items-center justify-center">
+                  <span className="text-gold-400 font-medium">Company Image</span>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Why Choose Us?</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm mr-3">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
                       1
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">Industry Expertise</h4>
-                      <p className="text-gray-600 text-sm">
+                      <h4 className="font-medium text-white">Industry Expertise</h4>
+                      <p className="text-gray-300 text-sm">
                         Specialized knowledge across multiple sectors and roles
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm mr-3">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
                       2
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">Personalized Approach</h4>
-                      <p className="text-gray-600 text-sm">
+                      <h4 className="font-medium text-white">Personalized Approach</h4>
+                      <p className="text-gray-300 text-sm">
                         Custom solutions tailored to your specific requirements
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm mr-3">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
                       3
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">Quality Candidates</h4>
-                      <p className="text-gray-600 text-sm">
+                      <h4 className="font-medium text-white">Quality Candidates</h4>
+                      <p className="text-gray-300 text-sm">
                         Rigorous screening process to ensure top-tier talent
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm mr-3">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
                       4
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">Ongoing Support</h4>
-                      <p className="text-gray-600 text-sm">
+                      <h4 className="font-medium text-white">Ongoing Support</h4>
+                      <p className="text-gray-300 text-sm">
                         Continuous assistance throughout the entire process
                       </p>
                     </div>
