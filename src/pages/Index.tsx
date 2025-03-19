@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
+
 const Index = () => {
   useEffect(() => {
     // Force scroll to top and ensure images load
