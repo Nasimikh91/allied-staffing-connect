@@ -35,17 +35,6 @@ const Footer = () => {
                 Connecting exceptional talent with industry leaders for over a
                 decade.
               </p>
-              <div className="mt-4">
-                <a
-                  href="https://alliedprostaffing.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-primary-400 hover:text-primary-300 transition-colors w-fit"
-                >
-                  <span>alliedprostaffing.com</span>
-                  <ExternalLink className="ml-1 h-4 w-4" />
-                </a>
-              </div>
             </div>
             
             <div className="flex space-x-4">
