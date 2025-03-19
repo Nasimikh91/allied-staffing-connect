@@ -1,20 +1,53 @@
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const [scrollOpacity, setScrollOpacity] = useState(1);
+
+  // Add scroll event listener to handle fade effect
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate opacity based on scroll position
+      // Starts fading when reaching ~20% of screen height, becomes fully transparent at ~80% of screen height
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const fadeStartPosition = viewportHeight * 0.2;
+      const fadeEndPosition = viewportHeight * 0.8;
+      
+      if (scrollY <= fadeStartPosition) {
+        setScrollOpacity(1);
+      } else if (scrollY >= fadeEndPosition) {
+        setScrollOpacity(0);
+      } else {
+        const opacity = 1 - ((scrollY - fadeStartPosition) / (fadeEndPosition - fadeStartPosition));
+        setScrollOpacity(opacity);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background image container */}
-      <div className="absolute inset-0 z-0">
-        {/* Professional workspace environment */}
-        <div className="w-full h-full bg-gradient-to-r from-blue-900 via-indigo-900 to-gray-900">
+      {/* Background image container with dynamic opacity based on scroll */}
+      <div 
+        className="absolute inset-0 z-0 transition-opacity duration-300"
+        style={{ opacity: scrollOpacity }}
+      >
+        {/* Professional workspace environment - darkened slightly */}
+        <div className="w-full h-full bg-gradient-to-r from-blue-900/90 via-indigo-900/90 to-gray-900/90">
           {/* Abstract lighting and atmosphere */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/40 blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-purple-500/30 blur-3xl"></div>
-            <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-gold-400/20 blur-3xl"></div>
-            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-indigo-600/25 blur-3xl"></div>
+          <div className="absolute inset-0 opacity-25">
+            <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/30 blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-purple-500/25 blur-3xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-gold-400/15 blur-3xl"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-indigo-600/20 blur-3xl"></div>
           </div>
           
           {/* Office environment elements */}
@@ -106,8 +139,8 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Subtle overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/25 backdrop-blur-[1px]"></div>
+        {/* Subtle overlay for better text readability - darkened more */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
       </div>
 
       {/* Decorative elements */}
@@ -148,7 +181,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg font-bold text-white max-w-xl"
+              className="text-lg text-gray-300 max-w-xl"
             >
               At Allied Pro Staffing, we specialize in connecting the
               right people with the right opportunities, delivering tailored
