@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Building2, Briefcase, Award, Clock, CheckCircle2 } from "lucide-react";
@@ -65,12 +66,15 @@ const Services = () => {
     <section id="services" className="py-20 bg-black relative overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute inset-0 opacity-10">
-        {/* Blue contrast extension to this section - new addition */}
-        <div className="absolute top-0 w-full h-1/3 bg-gradient-to-b from-blue-900/20 to-transparent"></div>
+        {/* Dark blue background with more prominence */}
+        <div className="absolute inset-0 bg-blue-900 opacity-50"></div>
         
         <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
+        
+        {/* Blue contrast gradient that extends further down */}
+        <div className="absolute top-0 w-full h-2/3 bg-gradient-to-b from-blue-900/50 to-transparent"></div>
         
         {/* Animated dots pattern */}
         <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
@@ -102,7 +106,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5"
+            className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5 text-base"
           >
             Our Services
           </motion.span>
