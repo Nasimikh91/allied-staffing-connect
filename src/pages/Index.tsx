@@ -8,6 +8,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 // Lazily load non-critical sections to improve initial load time
 const Services = React.lazy(() => import("@/components/Services"));
 const About = React.lazy(() => import("@/components/About"));
+const Reviews = React.lazy(() => import("@/components/Reviews"));
+const Partners = React.lazy(() => import("@/components/Partners"));
 const Contact = React.lazy(() => import("@/components/Contact"));
 const Footer = React.lazy(() => import("@/components/Footer"));
 
@@ -86,6 +88,12 @@ const Index = () => {
       </Suspense>
       <Suspense fallback={<SectionLoading />}>
         <About />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <Reviews />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <Partners />
       </Suspense>
       <Suspense fallback={<SectionLoading />}>
         <Contact />
