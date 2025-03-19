@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
@@ -14,7 +13,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="about" className="py-20 bg-gray-950 relative overflow-hidden">
       {/* Visual elements for the background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 right-1/4 w-72 h-72 bg-primary-600 rounded-full filter blur-3xl"></div>
@@ -55,10 +54,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5">
+            <span className="inline-block text-md font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5">
               About Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
               Your Trusted Partner for Professional Staffing Solutions
             </h2>
             <p className="text-lg text-gray-300 mb-8">
@@ -169,7 +168,7 @@ const About = () => {
                       transition={{ duration: 6, repeat: Infinity, yoyo: true }}
                     />
                   </div>
-                  <span className="text-gold-400 font-medium relative z-10">Professional Environment</span>
+                  <span className="text-gold-400 font-medium text-lg relative z-10">Professional Environment</span>
                 </div>
               </div>
 

@@ -63,12 +63,12 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-black relative overflow-hidden">
+    <section id="services" className="py-20 bg-blue-950 relative overflow-hidden">
       {/* Abstract background elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-15">
         <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-700 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-blue-800 rounded-full filter blur-3xl"></div>
         
         {/* Animated dots pattern */}
         <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
@@ -100,7 +100,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5"
+            className="inline-block text-md font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5"
           >
             Our Services
           </motion.span>
@@ -109,7 +109,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             Comprehensive Staffing Solutions
           </motion.h2>

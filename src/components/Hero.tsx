@@ -7,8 +7,8 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image container */}
       <div className="absolute inset-0 z-0">
-        {/* Professional workspace environment */}
-        <div className="w-full h-full bg-gradient-to-r from-blue-900 via-indigo-900 to-gray-900">
+        {/* Professional workspace environment with darker blue background */}
+        <div className="w-full h-full bg-gradient-to-r from-blue-950 via-indigo-950 to-gray-950">
           {/* Abstract lighting and atmosphere */}
           <div className="absolute inset-0 opacity-30">
             <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/40 blur-3xl"></div>
@@ -107,7 +107,7 @@ const Hero = () => {
         </div>
         
         {/* Subtle overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/25 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]"></div>
       </div>
 
       {/* Decorative elements */}
