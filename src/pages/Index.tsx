@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Set the body background to dark theme
+    document.body.className = 'bg-background text-foreground';
   }, []);
 
   return (
@@ -19,7 +21,7 @@ const Index = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white"
+      className="min-h-screen"
     >
       <Navbar />
       <Hero />

@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.span
@@ -51,7 +51,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block text-sm font-medium text-primary-600 px-3 py-1 bg-primary-50 rounded-full mb-5"
+            className="inline-block text-sm font-medium text-primary-400 px-3 py-1 bg-primary-900/30 rounded-full mb-5"
           >
             Contact Us
           </motion.span>
@@ -60,7 +60,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-6"
           >
             Get In Touch With Our Team
           </motion.h2>
@@ -69,7 +69,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600"
+            className="text-lg text-gray-300"
           >
             Have a question or ready to discuss your staffing needs? Reach out
             to us, and we'll be happy to assist you.
@@ -84,19 +84,19 @@ const Contact = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
+            <div className="bg-background rounded-xl shadow-sm p-8 border border-gray-800">
+              <h3 className="text-xl font-semibold text-foreground mb-6">
                 Contact Information
               </h3>
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-50 flex items-center justify-center mr-4">
-                    <MapPin className="h-5 w-5 text-primary-600" />
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4">
+                    <MapPin className="h-5 w-5 text-primary-400" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Our Office</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-medium text-foreground mb-1">Our Office</h4>
+                    <p className="text-gray-300">
                       6228 Crooked Creek Drive,<br />
                       Mason, OH 45040
                     </p>
@@ -104,15 +104,15 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-50 flex items-center justify-center mr-4">
-                    <Phone className="h-5 w-5 text-primary-600" />
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4">
+                    <Phone className="h-5 w-5 text-primary-400" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-medium text-foreground mb-1">Phone</h4>
+                    <p className="text-gray-300">
                       <a
                         href="tel:+15132162663"
-                        className="text-primary-600 hover:text-primary-700 transition-colors"
+                        className="text-primary-400 hover:text-primary-300 transition-colors"
                       >
                         +1 (513) 216-2663
                       </a>
@@ -121,15 +121,15 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-50 flex items-center justify-center mr-4">
-                    <Mail className="h-5 w-5 text-primary-600" />
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4">
+                    <Mail className="h-5 w-5 text-primary-400" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-medium text-foreground mb-1">Email</h4>
+                    <p className="text-gray-300">
                       <a
                         href="mailto:info@alliedprostaffing.com"
-                        className="text-primary-600 hover:text-primary-700 transition-colors"
+                        className="text-primary-400 hover:text-primary-300 transition-colors"
                       >
                         info@alliedprostaffing.com
                       </a>
@@ -139,19 +139,19 @@ const Contact = () => {
               </div>
 
               <div className="mt-10">
-                <h4 className="font-medium text-gray-900 mb-4">Hours of Operation</h4>
+                <h4 className="font-medium text-foreground mb-4">Hours of Operation</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Monday - Friday</span>
-                    <span className="text-gray-900 font-medium">8:00 AM - 6:00 PM</span>
+                    <span className="text-gray-300">Monday - Friday</span>
+                    <span className="text-foreground font-medium">9:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Saturday</span>
-                    <span className="text-gray-900 font-medium">10:00 AM - 2:00 PM</span>
+                    <span className="text-gray-300">Saturday</span>
+                    <span className="text-foreground font-medium">10:00 AM - 2:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Sunday</span>
-                    <span className="text-gray-900 font-medium">Closed</span>
+                    <span className="text-gray-300">Sunday</span>
+                    <span className="text-foreground font-medium">Closed</span>
                   </div>
                 </div>
               </div>
