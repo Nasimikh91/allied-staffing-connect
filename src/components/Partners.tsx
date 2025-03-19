@@ -18,19 +18,23 @@ const partners: Partner[] = [
   },
   { 
     name: "Ernest Capital", 
-    logoUrl: "https://cdn-icons-png.flaticon.com/512/6295/6295417.png" 
+    // Using a standard finance logo icon that's easily visible on dark background
+    logoUrl: "https://cdn-icons-png.flaticon.com/512/1048/1048277.png" 
   },
   { 
     name: "JP Morgan Chase & Co", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/af/J.P._Morgan_Logo_2008_1.svg" 
+    // Using a cleaner version of the logo that works better with invert filter
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/4/42/JPMorgan_Chase_Logo_2008.svg" 
   },
   { 
     name: "CrowdStrike", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/15/Crowdstrike.svg" 
+    // Using a simpler version of the logo
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Crowdstrike_logo.svg" 
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Charles_Schwab_Corporation_logo.svg" 
+    // Using a cleaner version of the logo that works better with invert filter
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/8/82/Charles_Schwab_Corporation_logo.svg" 
   },
   { 
     name: "Goldman Sachs", 
