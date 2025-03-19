@@ -10,7 +10,13 @@ import { motion } from "framer-motion";
 
 const Index = () => {
   useEffect(() => {
+    // Force scroll to top and ensure images load
     window.scrollTo(0, 0);
+    
+    // Preload the hero background image
+    const preloadImage = new Image();
+    preloadImage.src = "/lovable-uploads/c98c8297-eb07-40bc-a31c-dc6515989ea3.png";
+    
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
   }, []);
