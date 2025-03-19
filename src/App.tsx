@@ -23,7 +23,8 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/cookies" element={<CookiePolicy />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
