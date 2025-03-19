@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -44,16 +43,15 @@ const Hero = () => {
             />
           ))}
           
-          {/* Office environment elements */}
+          {/* Office environment elements - removing the box/table behind silhouettes */}
           <div className="absolute inset-0">            
             {/* Professional team representation */}
             <div className="absolute bottom-0 left-0 right-0 flex justify-center">
               <div className="relative h-72 w-full max-w-5xl">
-                {/* Stylized desk/table */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-12 bg-white/10 rounded-t-md backdrop-blur-sm"></div>
+                {/* Removed the stylized desk/table that was creating the line/box */}
                 
                 {/* Team silhouettes with glow effect */}
-                <div className="absolute bottom-12 left-0 right-0 flex justify-around items-end">
+                <div className="absolute bottom-0 left-0 right-0 flex justify-around items-end">
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -96,15 +94,9 @@ const Hero = () => {
                   </motion.div>
                 </div>
                 
-                {/* Conference room table effect */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-4 bg-white/5 rounded-t-full blur-sm"></div>
+                {/* Removed the conference room table effect */}
                 
-                {/* Abstract computer/device representations */}
-                <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-4/5 flex justify-around">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="w-8 h-3 bg-gold-400/30 rounded-sm blur-[1px]"></div>
-                  ))}
-                </div>
+                {/* Removed the abstract computer/device representations */}
               </div>
             </div>
           </div>
