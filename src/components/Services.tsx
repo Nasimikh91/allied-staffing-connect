@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Building2, Briefcase, Award, Clock, CheckCircle2 } from "lucide-react";
@@ -66,12 +65,16 @@ const Services = () => {
     <section id="services" className="py-20 bg-black relative overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute inset-0 opacity-10">
+        {/* Restored dark blue background with gradient - more prominent */}
+        <div className="absolute inset-0 bg-blue-900 opacity-30"></div>
+        
+        {/* Keep the existing gold elements for accent */}
         <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
         
-        {/* Blue contrast extension to this section - new addition */}
-        <div className="absolute top-0 w-full h-1/3 bg-gradient-to-b from-blue-900/20 to-transparent"></div>
+        {/* Enhanced blue contrast gradient that extends over the entire section */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 to-transparent"></div>
         
         {/* Animated dots pattern */}
         <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
