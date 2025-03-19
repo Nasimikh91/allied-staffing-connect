@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -9,13 +8,15 @@ const Hero = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png')] bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-[url('/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png')] bg-cover bg-center opacity-60"
+          style={{ backgroundRepeat: 'no-repeat' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-white/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/70 to-white/80"></div>
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary-100 rounded-full filter blur-3xl opacity-30"></div>
         <div className="absolute bottom-0 left-10 w-72 h-72 bg-primary-100 rounded-full filter blur-3xl opacity-30"></div>
       </div>
 
+      {/* Keep the rest of the Hero component the same */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
