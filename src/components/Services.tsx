@@ -64,40 +64,11 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-black relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute inset-0 opacity-10">
-        {/* Dark blue background with more prominence */}
-        <div className="absolute inset-0 bg-blue-900 opacity-50"></div>
-        
-        <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
-        
-        {/* Blue contrast gradient that extends further down */}
-        <div className="absolute top-0 w-full h-2/3 bg-gradient-to-b from-blue-900/50 to-transparent"></div>
-        
-        {/* Animated dots pattern */}
-        <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
-          {Array.from({ length: 40 }).map((_, i) => (
-            <motion.div 
-              key={i}
-              className="w-2 h-2 bg-gold-400 rounded-full"
-              initial={{ opacity: 0.1 }}
-              animate={{ opacity: [0.1, 0.3, 0.1] }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity, 
-                delay: i * 0.1 % 3,
-                ease: "easeInOut" 
-              }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Pure dark blue background overlay */}
+      <div className="absolute inset-0 bg-blue-900 opacity-80"></div>
+      
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 to-blue-900/30"></div>
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -106,7 +77,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5 text-base"
+            className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5"
           >
             Our Services
           </motion.span>
