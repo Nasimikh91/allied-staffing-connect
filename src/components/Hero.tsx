@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-[url('/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png')] bg-cover bg-center opacity-25"
         ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-white/90"></div>
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary-100 rounded-full filter blur-3xl opacity-30"></div>
