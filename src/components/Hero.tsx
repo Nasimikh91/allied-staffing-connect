@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -21,28 +20,7 @@ const Hero = () => {
           {/* Grid pattern overlay */}
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         
-          {/* Animated particles */}
-          {Array.from({ length: 15 }).map((_, index) => (
-            <motion.div
-              key={index}
-              className="absolute w-1.5 h-1.5 bg-primary-400 rounded-full"
-              initial={{ 
-                x: Math.random() * 100 + "%", 
-                y: Math.random() * 100 + "%",
-                opacity: 0.2
-              }}
-              animate={{ 
-                opacity: [0.2, 0.5, 0.2],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 3 + (Math.random() * 2),
-                ease: "easeInOut",
-                delay: index * 0.1
-              }}
-            />
-          ))}
+          {/* Remove animated particles that were creating the gold dots */}
           
           {/* Office environment elements - removing the box/table behind silhouettes */}
           <div className="absolute inset-0">            

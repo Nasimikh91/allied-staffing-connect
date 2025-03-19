@@ -1,6 +1,5 @@
-
 // Service Worker for better offline experience and reliability
-const CACHE_NAME = 'allied-pro-staffing-v11'; // Increment cache version
+const CACHE_NAME = 'allied-pro-staffing-v12'; // Increment cache version
 const urlsToCache = [
   '/',
   '/index.html',
