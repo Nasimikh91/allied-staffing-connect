@@ -32,19 +32,19 @@ const partners: Partner[] = [
     logoUrl: "", // Empty string to satisfy TypeScript requirements
     isText: true,
     textColor: "#5A3D2B",
-    bgColor: "#ffffff" // Changed to white for better visibility
+    bgColor: "#ffffff" // White background for better visibility
   },
   { 
     name: "JP Morgan", 
-    logoUrl: "public/lovable-uploads/397abe62-c464-4ee5-a332-6022b04faf44.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/JPMorgan_Chase_Logo_2008_1.svg/2560px-JPMorgan_Chase_Logo_2008_1.svg.png" 
   },
   { 
     name: "CrowdStrike", 
-    logoUrl: "public/lovable-uploads/318bfc0c-fe3e-4178-a0d0-ed237df4cbc0.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Crowdstrike-logo-2022.svg/2560px-Crowdstrike-logo-2022.svg.png" 
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "public/lovable-uploads/4bd5c7a1-4677-4328-a120-c42d51cfe870.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Charles_Schwab_Corporation_logo.svg/2560px-Charles_Schwab_Corporation_logo.svg.png" 
   },
   { 
     name: "Goldman Sachs", 
@@ -109,8 +109,8 @@ const Partners = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="relative static" />
-              <CarouselNext className="relative static" />
+              <CarouselPrevious className="relative static bg-primary text-primary-foreground hover:bg-primary/90" />
+              <CarouselNext className="relative static bg-primary text-primary-foreground hover:bg-primary/90" />
             </div>
           </Carousel>
         </div>
