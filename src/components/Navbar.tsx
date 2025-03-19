@@ -52,7 +52,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <Link to="/" className="flex items-center">
-              <div className="mr-3 h-8 w-8 text-primary-400">
+              <div className="mr-3 h-10 w-10 text-primary-400">
                 <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path 
                     d="M12 2L4 6V12C4 15.31 7.58 20 12 22C16.42 20 20 15.31 20 12V6L12 2Z" 
@@ -71,10 +71,7 @@ const Navbar = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-primary-400">
-                  Allied
-                </div>
-                <div className="text-xl font-bold text-primary-400">
-                  Professional
+                  Allied Pro
                 </div>
                 <div className="text-xl font-medium text-gray-400">
                   Staffing

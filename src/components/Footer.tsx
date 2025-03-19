@@ -1,7 +1,7 @@
 
 import React from "react";
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,12 +12,33 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-6">
             <div>
-              <a href="/" className="inline-block">
-                <span className="text-xl font-bold text-primary-400">
-                  Allied<span className="text-primary-500">Professional</span>
-                </span>
-                <span className="ml-1 text-xl font-medium text-white">Staffing</span>
-              </a>
+              <Link to="/" className="inline-flex items-center">
+                <div className="mr-3 h-10 w-10 text-primary-400">
+                  <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path 
+                      d="M12 2L4 6V12C4 15.31 7.58 20 12 22C16.42 20 20 15.31 20 12V6L12 2Z" 
+                      fill="currentColor" 
+                      fillOpacity="0.2"
+                    />
+                    <path 
+                      d="M12 4L6 7.27273V12C6 14.4545 8.72727 18.1818 12 19.6364C15.2727 18.1818 18 14.4545 18 12V7.27273L12 4Z" 
+                      fill="currentColor"
+                    />
+                    <path 
+                      d="M9 14L10.5 9.5L12 14L15 9L13.5 14.5H9Z" 
+                      fill="#121212" 
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-xl font-bold text-primary-400">
+                    Allied Pro
+                  </div>
+                  <div className="text-xl font-medium text-gray-400">
+                    Staffing
+                  </div>
+                </div>
+              </Link>
               <p className="mt-4 text-gray-400">
                 Connecting exceptional talent with industry leaders for over a
                 decade.
@@ -177,33 +198,33 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Allied Professional Staffing. All rights reserved.
+              &copy; {currentYear} Allied Pro Staffing. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/privacy"
                     className="text-gray-500 hover:text-primary-400 text-sm transition-colors"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/terms"
                     className="text-gray-500 hover:text-primary-400 text-sm transition-colors"
                   >
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/cookies"
                     className="text-gray-500 hover:text-primary-400 text-sm transition-colors"
                   >
                     Cookie Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

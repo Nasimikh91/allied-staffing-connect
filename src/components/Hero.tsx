@@ -47,7 +47,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg text-gray-300 max-w-xl"
             >
-              At Allied Professional Staffing, we specialize in connecting the
+              At Allied Pro Staffing, we specialize in connecting the
               right people with the right opportunities, delivering tailored
               staffing solutions that drive business success.
             </motion.p>
@@ -90,17 +90,17 @@ const Hero = () => {
                       <div className="text-sm text-gray-300">Successful Placements</div>
                     </div>
                   </div>
-                  <div className="bg-blue-900/30 h-48 rounded-lg flex items-center justify-center p-6 border border-blue-800/50">
+                  <div className="bg-primary-900/30 h-48 rounded-lg flex items-center justify-center p-6 border border-primary-800/50">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-400">95%</div>
+                      <div className="text-3xl font-bold text-primary-400">95%</div>
                       <div className="text-sm text-gray-300">Client Satisfaction</div>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="bg-indigo-900/30 h-48 rounded-lg flex items-center justify-center p-6 border border-indigo-800/50">
+                  <div className="bg-primary-900/30 h-48 rounded-lg flex items-center justify-center p-6 border border-primary-800/50">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-indigo-400">7</div>
+                      <div className="text-3xl font-bold text-primary-400">7</div>
                       <div className="text-sm text-gray-300">Years Experience</div>
                     </div>
                   </div>
