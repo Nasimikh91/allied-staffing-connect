@@ -170,7 +170,7 @@ const Hero = () => {
               </a>
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-white bg-gray-800/80 hover:bg-gray-700/90 border border-gold-500/30 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(234,179,8,0.2)]"
+                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg"
               >
                 Contact Us
               </a>
