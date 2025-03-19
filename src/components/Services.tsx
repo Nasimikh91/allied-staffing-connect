@@ -1,45 +1,44 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, Building2, Briefcase, Award, Clock, CheckCircle2 } from "lucide-react";
+import { Users, Server, Code, Database, Shield, Cpu } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: <Users className="h-10 w-10 text-gold-400" />,
-      title: "Permanent Placement",
+      title: "IT Staffing",
       description:
-        "We match exceptional talent with industry-leading companies for full-time positions across various sectors.",
+        "We match exceptional IT professionals with industry-leading technology companies for full-time and contract positions.",
     },
     {
-      icon: <Clock className="h-10 w-10 text-gold-400" />,
-      title: "Contract Staffing",
+      icon: <Code className="h-10 w-10 text-gold-400" />,
+      title: "Software Development",
       description:
-        "Flexible staffing solutions for project-based work, temporary positions, and seasonal demands.",
+        "Custom software solutions designed and developed by expert engineers to meet your specific business needs.",
     },
     {
-      icon: <Building2 className="h-10 w-10 text-gold-400" />,
-      title: "Executive Search",
+      icon: <Server className="h-10 w-10 text-gold-400" />,
+      title: "IT Infrastructure",
       description:
-        "Specialized recruitment for C-level executives and senior management positions.",
+        "Comprehensive infrastructure solutions including cloud migration, server management, and network optimization.",
     },
     {
-      icon: <Briefcase className="h-10 w-10 text-gold-400" />,
-      title: "Professional Recruiting",
+      icon: <Cpu className="h-10 w-10 text-gold-400" />,
+      title: "Technical Support",
       description:
-        "Connecting qualified professionals with opportunities that match their skills and career goals.",
+        "Reliable technical support services to ensure your systems run smoothly and efficiently at all times.",
     },
     {
-      icon: <CheckCircle2 className="h-10 w-10 text-gold-400" />,
-      title: "Talent Assessment",
+      icon: <Database className="h-10 w-10 text-gold-400" />,
+      title: "Data Services",
       description:
-        "Comprehensive evaluation of candidates to ensure the perfect fit for your organization's culture and needs.",
+        "Data management, analytics, and business intelligence solutions to help you leverage your data effectively.",
     },
     {
-      icon: <Award className="h-10 w-10 text-gold-400" />,
-      title: "Specialized Expertise",
+      icon: <Shield className="h-10 w-10 text-gold-400" />,
+      title: "Cybersecurity",
       description:
-        "Industry-specific recruitment in healthcare, technology, finance, manufacturing, and more.",
+        "Protect your business with comprehensive security assessments, monitoring, and threat prevention solutions.",
     },
   ];
 
@@ -114,7 +113,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
-            Comprehensive Staffing Solutions
+            Comprehensive IT Solutions
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -123,9 +122,8 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-300"
           >
-            We provide tailored recruitment services to meet your specific
-            business needs, connecting the right talent with the right
-            opportunities across various industries.
+            We provide tailored IT consulting and technology services to meet your specific
+            business needs, helping organizations navigate the digital landscape and achieve their goals.
           </motion.p>
         </div>
 
@@ -174,7 +172,7 @@ const Services = () => {
             className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg relative overflow-hidden group"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-gold-300 to-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <span className="relative z-10">Discuss Your Staffing Needs</span>
+            <span className="relative z-10">Discuss Your IT Needs</span>
           </a>
         </motion.div>
       </div>

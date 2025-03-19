@@ -115,7 +115,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <span className="text-xl md:text-2xl font-bold text-gold-400 truncate">Allied Pro Staffing</span>
+              <span className="text-xl md:text-2xl font-bold text-gold-400 truncate">Allied IT Consultant</span>
             </Link>
           </motion.div>
 

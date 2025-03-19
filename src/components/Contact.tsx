@@ -96,7 +96,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-foreground mb-6"
           >
-            Get In Touch With Our Team
+            Get In Touch With Our IT Team
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -105,7 +105,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-300"
           >
-            Have a question or ready to discuss your staffing needs? Reach out
+            Have a question or ready to discuss your IT consulting needs? Reach out
             to us, and we'll be happy to assist you.
           </motion.p>
         </div>
@@ -166,10 +166,10 @@ const Contact = () => {
                     <h4 className="font-medium text-foreground mb-1">Email</h4>
                     <p className="text-gray-300">
                       <a
-                        href="mailto:info@alliedprostaffing.com"
+                        href="mailto:info@allieditconsultant.net"
                         className="text-primary-400 hover:text-primary-300 transition-colors"
                       >
-                        info@alliedprostaffing.com
+                        info@allieditconsultant.net
                       </a>
                     </p>
                   </div>

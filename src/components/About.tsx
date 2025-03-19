@@ -4,12 +4,12 @@ import { CheckCircle } from "lucide-react";
 
 const About = () => {
   const values = [
-    "Excellence in service delivery",
-    "Integrity in all interactions",
-    "Personalized approach to client needs",
-    "Dedication to long-term partnerships",
-    "Commitment to diversity and inclusion",
-    "Continuous improvement and innovation",
+    "Technical excellence in delivery",
+    "Integrity in all client interactions",
+    "Innovative IT solutions",
+    "Dedication to long-term technology partnerships",
+    "Commitment to talent development",
+    "Continuous improvement in IT practices",
   ];
 
   return (
@@ -58,14 +58,13 @@ const About = () => {
               About Us
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Your Trusted Partner for Professional Staffing Solutions
+              Your Trusted Partner for IT Consulting Solutions
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              At Allied Professional Staffing, we bridge the gap between talented
-              professionals and leading organizations. With years of industry
-              experience, we understand the unique challenges of the modern
-              workforce and provide tailored staffing solutions that make a
-              difference.
+              At Allied IT Consultant, we bridge the gap between talented
+              IT professionals and leading technology organizations. With years of industry
+              experience, we understand the unique challenges of modern technology environments
+              and provide tailored IT solutions that drive digital transformation.
             </p>
 
             <div className="mb-8">
@@ -168,7 +167,7 @@ const About = () => {
                       transition={{ duration: 6, repeat: Infinity, yoyo: true }}
                     />
                   </div>
-                  <span className="text-gold-400 font-medium text-lg relative z-10">Professional Environment</span>
+                  <span className="text-gold-400 font-medium text-lg relative z-10">IT Excellence</span>
                 </div>
               </div>
 
@@ -180,9 +179,9 @@ const About = () => {
                       1
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Industry Expertise</h4>
+                      <h4 className="font-medium text-white">IT Expertise</h4>
                       <p className="text-gray-300 text-sm">
-                        Specialized knowledge across multiple sectors and roles
+                        Deep technical knowledge across multiple IT domains
                       </p>
                     </div>
                   </div>
@@ -192,9 +191,9 @@ const About = () => {
                       2
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Personalized Approach</h4>
+                      <h4 className="font-medium text-white">Custom Solutions</h4>
                       <p className="text-gray-300 text-sm">
-                        Custom solutions tailored to your specific requirements
+                        Tailored IT strategies designed for your specific business challenges
                       </p>
                     </div>
                   </div>
@@ -204,9 +203,9 @@ const About = () => {
                       3
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Quality Candidates</h4>
+                      <h4 className="font-medium text-white">Elite Talent</h4>
                       <p className="text-gray-300 text-sm">
-                        Rigorous screening process to ensure top-tier talent
+                        Access to top-tier IT professionals and technology experts
                       </p>
                     </div>
                   </div>
@@ -216,9 +215,9 @@ const About = () => {
                       4
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Ongoing Support</h4>
+                      <h4 className="font-medium text-white">Technical Support</h4>
                       <p className="text-gray-300 text-sm">
-                        Continuous assistance throughout the entire process
+                        Continuous assistance throughout your technology implementation
                       </p>
                     </div>
                   </div>

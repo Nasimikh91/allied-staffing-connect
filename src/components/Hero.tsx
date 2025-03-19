@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -125,7 +126,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="inline-block text-md font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-6">
-                Premier Staffing Solutions
+                Premier IT Consulting Solutions
               </span>
             </motion.div>
 
@@ -136,8 +137,8 @@ const Hero = () => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
             >
               Connecting{" "}
-              <span className="text-gold-400">Exceptional Talent</span> with
-              Industry Leaders
+              <span className="text-gold-400">Exceptional IT Talent</span> with
+              Technology Leaders
             </motion.h1>
 
             <motion.p
@@ -146,9 +147,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg text-white max-w-xl"
             >
-              At Allied Pro Staffing, we specialize in connecting the
-              right people with the right opportunities, delivering tailored
-              staffing solutions that drive business success.
+              At Allied IT Consultant, we specialize in connecting the
+              right IT professionals with the right tech opportunities, delivering tailored
+              technology solutions that drive digital transformation.
             </motion.p>
 
             <motion.div
@@ -185,7 +186,7 @@ const Hero = () => {
                   <div className="bg-black/70 h-32 rounded-lg flex items-center justify-center p-6 border border-gray-800">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gold-400">150+</div>
-                      <div className="text-sm text-gray-300">Successful Placements</div>
+                      <div className="text-sm text-gray-300">IT Projects Completed</div>
                     </div>
                   </div>
                   <div className="bg-black/70 h-48 rounded-lg flex items-center justify-center p-6 border border-gray-800">
@@ -199,7 +200,7 @@ const Hero = () => {
                   <div className="bg-black/70 h-48 rounded-lg flex items-center justify-center p-6 border border-gray-800">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gold-400">10</div>
-                      <div className="text-sm text-gray-300">Years Experience</div>
+                      <div className="text-sm text-gray-300">Years in IT Consulting</div>
                     </div>
                   </div>
                 </div>

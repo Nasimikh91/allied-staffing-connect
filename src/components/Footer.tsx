@@ -30,11 +30,10 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-xl font-bold text-primary-400">Allied Pro Staffing</span>
+                <span className="text-xl font-bold text-primary-400">Allied IT Consultant</span>
               </Link>
               <p className="mt-4 text-gray-400">
-                Connecting exceptional talent with industry leaders for over a
-                decade.
+                Connecting exceptional IT talent with technology leaders for innovative solutions.
               </p>
             </div>
           </div>
@@ -85,7 +84,7 @@ const Footer = () => {
                   href="/#services"
                   className="text-gray-400 hover:text-primary-400 transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" /> Permanent Placement
+                  <ArrowRight className="h-4 w-4 mr-2" /> IT Staffing
                 </a>
               </li>
               <li>
@@ -93,7 +92,7 @@ const Footer = () => {
                   href="/#services"
                   className="text-gray-400 hover:text-primary-400 transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" /> Contract Staffing
+                  <ArrowRight className="h-4 w-4 mr-2" /> Software Development
                 </a>
               </li>
               <li>
@@ -101,7 +100,7 @@ const Footer = () => {
                   href="/#services"
                   className="text-gray-400 hover:text-primary-400 transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" /> Executive Search
+                  <ArrowRight className="h-4 w-4 mr-2" /> IT Consulting
                 </a>
               </li>
               <li>
@@ -109,7 +108,7 @@ const Footer = () => {
                   href="/#services"
                   className="text-gray-400 hover:text-primary-400 transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" /> Professional Recruiting
+                  <ArrowRight className="h-4 w-4 mr-2" /> Technical Support
                 </a>
               </li>
             </ul>
@@ -137,10 +136,10 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-primary-400 mr-3 flex-shrink-0" />
                 <a
-                  href="mailto:info@alliedprostaffing.com"
+                  href="mailto:info@allieditconsultant.net"
                   className="text-gray-400 hover:text-primary-400 transition-colors"
                 >
-                  info@alliedprostaffing.com
+                  info@allieditconsultant.net
                 </a>
               </li>
               <li className="text-gray-400 mt-2">
@@ -155,7 +154,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Allied Pro Staffing. All rights reserved.
+              &copy; {currentYear} Allied IT Consultant. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
