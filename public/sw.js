@@ -1,6 +1,6 @@
 
 // Service Worker for better offline experience and reliability
-const CACHE_NAME = 'allied-pro-staffing-v1';
+const CACHE_NAME = 'allied-pro-staffing-v2'; // Updated cache version
 const urlsToCache = [
   '/',
   '/index.html',
@@ -13,17 +13,50 @@ const urlsToCache = [
 
 // Install event - cache critical assets
 self.addEventListener('install', event => {
+  console.log('Service Worker installing...');
+  // Force waiting service worker to become active
+  self.skipWaiting();
+  
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        console.log('Opened cache, caching resources');
+        return cache.addAll(urlsToCache).catch(error => {
+          console.error('Failed to cache some resources:', error);
+        });
       })
   );
 });
 
 // Fetch event - serve from cache when possible
 self.addEventListener('fetch', event => {
+  // Special handling for image requests
+  if (event.request.url.includes('/lovable-uploads/')) {
+    console.log('Image request detected:', event.request.url);
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          // Clone the response for caching
+          const responseToCache = response.clone();
+          
+          caches.open(CACHE_NAME)
+            .then(cache => {
+              console.log('Caching image resource:', event.request.url);
+              cache.put(event.request, responseToCache);
+            })
+            .catch(err => console.error('Error caching image:', err));
+            
+          return response;
+        })
+        .catch(() => {
+          console.log('Falling back to cached image');
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+  
+  // Regular fetch handling for other resources
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -66,16 +99,29 @@ self.addEventListener('fetch', event => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
+  console.log('Service Worker activating...');
+  
+  // Take control of all clients immediately
+  self.clients.claim();
+  
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
+            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
     })
   );
+});
+
+// Optional: Listen for messages from the client
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });

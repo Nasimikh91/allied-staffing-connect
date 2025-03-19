@@ -36,9 +36,27 @@ const Index = () => {
     // Add service worker registration for better offline support
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(error => {
-          console.log('Service Worker registration failed:', error);
-        });
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+            
+            // Check for updates to the Service Worker
+            registration.update();
+            
+            // If there's a waiting worker, let's have it take over
+            if (registration.waiting) {
+              registration.waiting.postMessage({type: 'SKIP_WAITING'});
+            }
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+      
+      // Reload the page when the Service Worker is updated
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        console.log('Service Worker controller changed, reloading page');
+        window.location.reload();
       });
     }
   }, []);

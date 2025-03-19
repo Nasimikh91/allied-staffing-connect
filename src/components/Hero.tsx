@@ -1,23 +1,45 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the hero image and set state when loaded
+    const img = new Image();
+    img.src = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
+    img.onload = () => {
+      console.log('Hero background image loaded successfully');
+      setImageLoaded(true);
+    };
+    img.onerror = (e) => {
+      console.error('Failed to load hero background image:', e);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-        style={{ backgroundImage: "url('/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png')" }}
+        style={{ 
+          backgroundImage: `url('/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png')`,
+          opacity: imageLoaded ? 1 : 0,
+          transition: 'opacity 0.5s ease-in'
+        }}
       >
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
       </div>
+
+      {/* Fallback background color while image loads */}
+      <div className="absolute inset-0 bg-black z-[-1]"></div>
 
       {/* Decorative elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
 
+      {/* Rest of the Hero component */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
