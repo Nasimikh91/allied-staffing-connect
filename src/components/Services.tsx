@@ -6,37 +6,37 @@ import { Users, Building2, Briefcase, Award, Clock, CheckCircle2 } from "lucide-
 const Services = () => {
   const services = [
     {
-      icon: <Users className="h-10 w-10 text-primary-600" />,
+      icon: <Users className="h-10 w-10 text-primary-700" />,
       title: "Permanent Placement",
       description:
         "We match exceptional talent with industry-leading companies for full-time positions across various sectors.",
     },
     {
-      icon: <Clock className="h-10 w-10 text-primary-600" />,
+      icon: <Clock className="h-10 w-10 text-primary-700" />,
       title: "Contract Staffing",
       description:
         "Flexible staffing solutions for project-based work, temporary positions, and seasonal demands.",
     },
     {
-      icon: <Building2 className="h-10 w-10 text-primary-600" />,
+      icon: <Building2 className="h-10 w-10 text-primary-700" />,
       title: "Executive Search",
       description:
         "Specialized recruitment for C-level executives and senior management positions.",
     },
     {
-      icon: <Briefcase className="h-10 w-10 text-primary-600" />,
+      icon: <Briefcase className="h-10 w-10 text-primary-700" />,
       title: "Professional Recruiting",
       description:
         "Connecting qualified professionals with opportunities that match their skills and career goals.",
     },
     {
-      icon: <CheckCircle2 className="h-10 w-10 text-primary-600" />,
+      icon: <CheckCircle2 className="h-10 w-10 text-primary-700" />,
       title: "Talent Assessment",
       description:
         "Comprehensive evaluation of candidates to ensure the perfect fit for your organization's culture and needs.",
     },
     {
-      icon: <Award className="h-10 w-10 text-primary-600" />,
+      icon: <Award className="h-10 w-10 text-primary-700" />,
       title: "Specialized Expertise",
       description:
         "Industry-specific recruitment in healthcare, technology, finance, manufacturing, and more.",
@@ -63,7 +63,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.span
@@ -71,7 +71,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block text-sm font-medium text-primary-600 px-3 py-1 bg-primary-50 rounded-full mb-5"
+            className="inline-block text-sm font-medium text-primary-700 px-3 py-1 bg-primary-50 rounded-full mb-5"
           >
             Our Services
           </motion.span>
@@ -80,7 +80,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"
           >
             Comprehensive Staffing Solutions
           </motion.h2>
@@ -108,12 +108,12 @@ const Services = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group"
+              className="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group"
             >
-              <div className="mb-6 p-4 bg-primary-50 rounded-lg inline-block group-hover:bg-primary-100 transition-colors">
+              <div className="mb-6 p-4 bg-slate-50 rounded-lg inline-block group-hover:bg-slate-100 transition-colors">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {service.title}
               </h3>
               <p className="text-gray-600">{service.description}</p>
@@ -130,7 +130,7 @@ const Services = () => {
         >
           <a
             href="/#contact"
-            className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg"
+            className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-white bg-primary-700 hover:bg-primary-800 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg"
           >
             Discuss Your Staffing Needs
           </a>
