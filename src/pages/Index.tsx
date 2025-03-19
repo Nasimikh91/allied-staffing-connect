@@ -25,14 +25,15 @@ const Index = () => {
     // Force scroll to top and ensure images load
     window.scrollTo(0, 0);
     
-    // Preload both potential background images
-    const primaryImg = new Image();
-    primaryImg.src = '/lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png';
-    console.log('Preloading primary background image:', primaryImg.src);
+    // Explicitly preload background images
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+      console.log('Preloading image:', src);
+    };
     
-    const fallbackImg = new Image();
-    fallbackImg.src = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
-    console.log('Preloading fallback background image:', fallbackImg.src);
+    preloadImage('lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png');
+    preloadImage('lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png');
     
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';

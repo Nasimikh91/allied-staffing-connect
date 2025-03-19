@@ -1,57 +1,54 @@
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
+  const [currentImagePath, setCurrentImagePath] = useState('');
   
-  // Use the new image that was just uploaded
-  const backgroundImage = '/lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png';
-  // Fallback to a previous image if available
-  const fallbackImage = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
+  // Define image paths - ensure they're absolutely correct
+  const primaryImagePath = 'lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png';
+  const fallbackImagePath = 'lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
 
   useEffect(() => {
-    console.log('Hero component mounted, loading image:', backgroundImage);
-    
-    // Try to load the primary image
-    const img = new Image();
-    img.src = backgroundImage;
-    
-    img.onload = () => {
-      console.log('Background image loaded successfully:', backgroundImage);
-      setImageLoaded(true);
-      setImageError(false);
+    const loadImage = (path) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = path;
+        img.onload = () => resolve(path);
+        img.onerror = () => reject(new Error(`Failed to load: ${path}`));
+      });
     };
-    
-    img.onerror = (e) => {
-      console.error('Failed to load primary background image, trying fallback');
-      setImageError(true);
-      
-      // Try fallback image
-      const fallbackImg = new Image();
-      fallbackImg.src = fallbackImage;
-      
-      fallbackImg.onload = () => {
-        console.log('Fallback image loaded successfully');
-        setImageLoaded(true);
-      };
-      
-      fallbackImg.onerror = () => {
-        console.error('Both primary and fallback images failed to load');
-      };
-    };
-    
-    // Clean up function
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
-  }, []);
 
-  // Choose which image to display based on load status
-  const currentBackgroundImage = imageError ? fallbackImage : backgroundImage;
+    // Try to load primary image first, then fallback
+    console.log('Attempting to load primary image:', primaryImagePath);
+    
+    loadImage(primaryImagePath)
+      .then(path => {
+        console.log('Successfully loaded primary image');
+        setCurrentImagePath(path);
+        setImageLoaded(true);
+      })
+      .catch(error => {
+        console.error('Primary image failed to load:', error.message);
+        
+        // Try fallback image
+        console.log('Attempting to load fallback image:', fallbackImagePath);
+        return loadImage(fallbackImagePath);
+      })
+      .then(path => {
+        if (path) {
+          console.log('Successfully loaded fallback image');
+          setCurrentImagePath(path);
+          setImageLoaded(true);
+        }
+      })
+      .catch(error => {
+        console.error('All images failed to load:', error.message);
+        // Set a default solid color background instead
+        setImageLoaded(true);
+      });
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -59,7 +56,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{ 
-          backgroundImage: imageLoaded ? `url('${currentBackgroundImage}')` : 'none',
+          backgroundImage: imageLoaded && currentImagePath ? `url('${currentImagePath}')` : 'none',
           opacity: imageLoaded ? 1 : 0,
           transition: 'opacity 0.5s ease-in'
         }}
