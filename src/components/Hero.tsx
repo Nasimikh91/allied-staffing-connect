@@ -7,35 +7,44 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image container */}
       <div className="absolute inset-0 z-0">
-        {/* Professional workspace environment with darker blue background */}
-        <div className="w-full h-full bg-gradient-to-r from-blue-950 via-indigo-950 to-gray-950">
+        {/* Dark gray background matching About section */}
+        <div className="w-full h-full bg-gray-950">
           {/* Abstract lighting and atmosphere */}
           <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/40 blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-purple-500/30 blur-3xl"></div>
+            <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-primary-600 blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-primary-500/30 blur-3xl"></div>
             <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-gold-400/20 blur-3xl"></div>
-            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-indigo-600/25 blur-3xl"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-primary-600/25 blur-3xl"></div>
           </div>
           
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+          {/* Animated particles */}
+          {Array.from({ length: 15 }).map((_, index) => (
+            <motion.div
+              key={index}
+              className="absolute w-1.5 h-1.5 bg-primary-400 rounded-full"
+              initial={{ 
+                x: Math.random() * 100 + "%", 
+                y: Math.random() * 100 + "%",
+                opacity: 0.2
+              }}
+              animate={{ 
+                opacity: [0.2, 0.5, 0.2],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 3 + (Math.random() * 2),
+                ease: "easeInOut",
+                delay: index * 0.1
+              }}
+            />
+          ))}
+          
           {/* Office environment elements */}
-          <div className="absolute inset-0">
-            {/* Modern office grid pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="h-full w-full" 
-                style={{
-                  backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent)',
-                  backgroundSize: '60px 60px'
-                }}>
-              </div>
-            </div>
-            
-            {/* Abstract office elements - windows/panels */}
-            <div className="absolute inset-x-0 top-0 h-1/3 flex justify-around overflow-hidden opacity-20">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="h-full w-24 bg-white/30 mx-1 rounded-b-lg transform translate-y-[-20%]"></div>
-              ))}
-            </div>
-            
+          <div className="absolute inset-0">            
             {/* Professional team representation */}
             <div className="absolute bottom-0 left-0 right-0 flex justify-center">
               <div className="relative h-72 w-full max-w-5xl">
@@ -97,12 +106,6 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Light beams effect */}
-            <div className="absolute inset-0">
-              <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-gold-400/20 to-transparent transform rotate-[-30deg] blur-md"></div>
-              <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-gold-400/20 to-transparent transform rotate-[20deg] blur-md"></div>
-            </div>
           </div>
         </div>
         
@@ -111,8 +114,8 @@ const Hero = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
-      <div className="absolute bottom-0 left-10 w-72 h-72 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
+      <div className="absolute top-20 right-0 w-96 h-96 bg-primary-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
+      <div className="absolute bottom-0 left-10 w-72 h-72 bg-primary-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
 
       {/* Content overlay */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10">

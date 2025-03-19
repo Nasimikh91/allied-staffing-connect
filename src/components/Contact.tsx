@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Send, CheckCircle } from "lucide-react";
@@ -43,19 +42,16 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-secondary relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gray-950 relative overflow-hidden">
       {/* Background visual elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary-500/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary-600/5 to-transparent"></div>
         
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-          backgroundSize: '20px 20px' 
-        }}></div>
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         
-        {/* Animated elements */}
+        {/* Animated particles */}
         {Array.from({ length: 8 }).map((_, index) => (
           <motion.div
             key={index}
