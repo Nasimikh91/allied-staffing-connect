@@ -18,6 +18,7 @@ interface Partner {
   bgColor?: string;
   isSvg?: boolean;
   svgContent?: React.ReactNode;
+  scale?: number; // Add scale property for custom sizing
 }
 
 const partners: Partner[] = [
@@ -44,6 +45,7 @@ const partners: Partner[] = [
     name: "CrowdStrike", 
     logoUrl: "",
     isSvg: true,
+    scale: 1.5, // Make CrowdStrike logo 50% larger
     svgContent: (
       <svg height="60" viewBox="-.3 3.8 900.3 599.8" width="90" xmlns="http://www.w3.org/2000/svg">
         <g fill="#da1b1b">
@@ -56,11 +58,13 @@ const partners: Partner[] = [
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "https://download.logo.wine/logo/Charles_Schwab_Corporation/Charles_Schwab_Corporation-Logo.wine.png" 
+    logoUrl: "https://download.logo.wine/logo/Charles_Schwab_Corporation/Charles_Schwab_Corporation-Logo.wine.png",
+    scale: 1.4 // Make Charles Schwab logo 40% larger
   },
   { 
     name: "Goldman Sachs", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Goldman_Sachs.svg/2560px-Goldman_Sachs.svg.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Goldman_Sachs.svg/2560px-Goldman_Sachs.svg.png",
+    scale: 1.3 // Make Goldman Sachs logo 30% larger 
   },
   { 
     name: "Expedia Group", 
@@ -106,7 +110,8 @@ const Partners = () => {
                             </h3>
                           </div>
                         ) : partner.isSvg ? (
-                          <div className="flex items-center justify-center">
+                          <div className="flex items-center justify-center" 
+                               style={{ transform: partner.scale ? `scale(${partner.scale})` : 'none' }}>
                             {partner.svgContent}
                           </div>
                         ) : (
@@ -114,7 +119,10 @@ const Partners = () => {
                             src={partner.logoUrl} 
                             alt={`${partner.name} logo`} 
                             className="max-h-full max-w-full object-contain" 
-                            style={{ maxWidth: "80%" }}
+                            style={{ 
+                              maxWidth: partner.scale ? `${80 * partner.scale}%` : "80%",
+                              transform: partner.scale ? `scale(${partner.scale})` : 'none'
+                            }}
                           />
                         )}
                         <span className="sr-only">{partner.name}</span>
