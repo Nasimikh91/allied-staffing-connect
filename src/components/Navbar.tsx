@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isMobile = useIsMobile();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   // Close menu when changing from mobile to desktop
   useEffect(() => {
@@ -38,15 +40,32 @@ const Navbar = () => {
     if (!isOpen) return;
     
     const handleOutsideClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest('.mobile-menu') && !target.closest('.menu-button')) {
+      if (
+        mobileMenuRef.current && 
+        menuButtonRef.current && 
+        !mobileMenuRef.current.contains(e.target as Node) && 
+        !menuButtonRef.current.contains(e.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
     
-    document.addEventListener('click', handleOutsideClick);
-    return () => document.removeEventListener('click', handleOutsideClick);
+    // Add event listeners with capture to ensure they fire first
+    document.addEventListener('click', handleOutsideClick, true);
+    document.addEventListener('touchend', handleOutsideClick as any, true);
+    
+    return () => {
+      document.removeEventListener('click', handleOutsideClick, true);
+      document.removeEventListener('touchend', handleOutsideClick as any, true);
+    };
   }, [isOpen]);
+
+  // Close menu on navigation
+  const handleNavigation = () => {
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  };
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -75,10 +94,10 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="flex items-center"
           >
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" onClick={handleNavigation}>
               <div className="mr-2 h-10 w-10 md:h-14 md:w-14 text-gold-400">
                 <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path 
@@ -119,6 +138,7 @@ const Navbar = () => {
                     <Link
                       to={link.href}
                       className="text-white hover:text-gold-400 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gold-500 after:transition-all"
+                      onClick={handleNavigation}
                     >
                       {link.name}
                     </Link>
@@ -126,6 +146,7 @@ const Navbar = () => {
                     <a
                       href={link.href}
                       className="text-white hover:text-gold-400 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gold-500 after:transition-all"
+                      onClick={handleNavigation}
                     >
                       {link.name}
                     </a>
@@ -140,6 +161,7 @@ const Navbar = () => {
                 <a
                   href="/#contact"
                   className="inline-flex items-center justify-center px-5 py-2.5 font-medium tracking-tight text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-colors duration-300"
+                  onClick={handleNavigation}
                 >
                   Contact Us
                   <ChevronRight className="ml-1 h-4 w-4" />
@@ -151,6 +173,7 @@ const Navbar = () => {
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
             <button
+              ref={menuButtonRef}
               onClick={toggleMenu}
               className="text-white hover:text-gold-400 transition-colors p-2 menu-button"
               aria-label="Toggle Menu"
@@ -163,24 +186,25 @@ const Navbar = () => {
 
       {/* Mobile Menu - improved for better mobile UX */}
       <motion.div
+        ref={mobileMenuRef}
         initial={{ height: 0, opacity: 0 }}
         animate={{
           height: isOpen ? "auto" : 0,
           opacity: isOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="md:hidden overflow-hidden bg-black mobile-menu"
+        className="md:hidden overflow-hidden bg-black/95 backdrop-blur-md mobile-menu"
         style={{ touchAction: "pan-y" }}
       >
         {isOpen && (
-          <div className="px-6 py-4 space-y-2 shadow-inner">
+          <div className="px-6 py-6 space-y-4 shadow-inner">
             {navLinks.map((link) => (
               link.name === "Home" ? (
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-3 text-white hover:text-gold-400 font-medium border-b border-gray-800 active:bg-gray-900 transition-colors"
+                  onClick={handleNavigation}
+                  className="block py-3 px-2 text-white hover:text-gold-400 active:text-gold-500 active:bg-gray-900/50 font-medium border-b border-gray-800 transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -188,8 +212,8 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-3 text-white hover:text-gold-400 font-medium border-b border-gray-800 active:bg-gray-900 transition-colors"
+                  onClick={handleNavigation}
+                  className="block py-3 px-2 text-white hover:text-gold-400 active:text-gold-500 active:bg-gray-900/50 font-medium border-b border-gray-800 transition-colors"
                 >
                   {link.name}
                 </a>
@@ -197,8 +221,8 @@ const Navbar = () => {
             ))}
             <a
               href="/#contact"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center mt-4 px-5 py-3 font-medium text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-colors active:bg-gold-600"
+              onClick={handleNavigation}
+              className="flex items-center justify-center mt-4 px-5 py-3 font-medium text-black bg-gold-400 hover:bg-gold-500 active:bg-gold-600 rounded-md transition-colors"
             >
               Contact Us
               <ChevronRight className="ml-1 h-4 w-4" />

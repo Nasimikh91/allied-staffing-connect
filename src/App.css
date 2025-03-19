@@ -23,14 +23,30 @@ body, html {
   margin: 0;
   padding: 0;
   text-align: left;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   min-height: 100vh;
   min-height: -webkit-fill-available; /* iOS viewport height fix */
+  position: relative;
 }
 
 /* Fix for iOS height issues */
 html {
   height: -webkit-fill-available;
+  width: 100%;
+}
+
+/* Mobile viewport fix */
+@media screen and (max-width: 768px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Force hardware acceleration for smoother scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Fix for input zooming on mobile devices */
@@ -42,6 +58,16 @@ input, select, textarea {
 button, a {
   touch-action: manipulation; /* Improve touch behavior */
   -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+  cursor: pointer;
+}
+
+/* Fix for touch delays on mobile */
+@media (pointer: coarse) {
+  a, button, [role="button"] {
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 /* Keep existing logo styles */
