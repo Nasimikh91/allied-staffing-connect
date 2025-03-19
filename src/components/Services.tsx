@@ -64,11 +64,34 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-black relative overflow-hidden">
-      {/* Pure dark blue background overlay */}
-      <div className="absolute inset-0 bg-blue-900 opacity-80"></div>
-      
-      {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 to-blue-900/30"></div>
+      {/* Abstract background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
+        
+        {/* Animated dots pattern */}
+        <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
+          {Array.from({ length: 40 }).map((_, i) => (
+            <motion.div 
+              key={i}
+              className="w-2 h-2 bg-gold-400 rounded-full"
+              initial={{ opacity: 0.1 }}
+              animate={{ opacity: [0.1, 0.3, 0.1] }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity, 
+                delay: i * 0.1 % 3,
+                ease: "easeInOut" 
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -86,7 +109,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl font-bold text-white mb-6"
           >
             Comprehensive Staffing Solutions
           </motion.h2>
