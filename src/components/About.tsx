@@ -84,19 +84,11 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative rounded-lg overflow-hidden shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-700/20 mix-blend-overlay"></div>
-              <img
-                src="/lovable-uploads/c98c8297-eb07-40bc-a31c-dc6515989ea3.png"
-                alt="IT professionals collaborating"
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"></div>
+            {/* Removed the problematic image that was showing Allied Pro Staffing */}
           </motion.div>
         </div>
 
-        {/* Why choose us */}
+        {/* Why choose us - Removed the "IT Excellence" heading and box */}
         <div className="mb-20">
           <div className="text-center mb-16">
             <motion.h2
