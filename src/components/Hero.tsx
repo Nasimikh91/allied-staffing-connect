@@ -40,107 +40,107 @@ const Hero = () => {
         className="absolute inset-0 z-0 transition-opacity duration-300"
         style={{ opacity: scrollOpacity }}
       >
-        {/* Professional workspace environment - darkened slightly */}
-        <div className="w-full h-full bg-gradient-to-r from-blue-900/90 via-indigo-900/90 to-gray-900/90">
-          {/* Abstract lighting and atmosphere */}
-          <div className="absolute inset-0 opacity-25">
-            <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/30 blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-purple-500/25 blur-3xl"></div>
-            <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-gold-400/15 blur-3xl"></div>
-            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-indigo-600/20 blur-3xl"></div>
+        {/* Professional workspace environment - darkened significantly */}
+        <div className="w-full h-full bg-gradient-to-r from-blue-900/95 via-indigo-900/95 to-gray-900/95">
+          {/* Abstract lighting and atmosphere - reduced opacity */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/25 blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-purple-500/20 blur-3xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-gold-400/10 blur-3xl"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 rounded-full bg-indigo-600/15 blur-3xl"></div>
           </div>
           
           {/* Office environment elements */}
           <div className="absolute inset-0">
-            {/* Modern office grid pattern */}
-            <div className="absolute inset-0 opacity-10">
+            {/* Modern office grid pattern - reduced opacity */}
+            <div className="absolute inset-0 opacity-8">
               <div className="h-full w-full" 
                 style={{
-                  backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent)',
+                  backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .06) 25%, rgba(255, 255, 255, .06) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .06) 75%, rgba(255, 255, 255, .06) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .06) 25%, rgba(255, 255, 255, .06) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .06) 75%, rgba(255, 255, 255, .06) 76%, transparent 77%, transparent)',
                   backgroundSize: '60px 60px'
                 }}>
               </div>
             </div>
             
-            {/* Abstract office elements - windows/panels */}
-            <div className="absolute inset-x-0 top-0 h-1/3 flex justify-around overflow-hidden opacity-20">
+            {/* Abstract office elements - windows/panels - reduced opacity */}
+            <div className="absolute inset-x-0 top-0 h-1/3 flex justify-around overflow-hidden opacity-15">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="h-full w-24 bg-white/30 mx-1 rounded-b-lg transform translate-y-[-20%]"></div>
+                <div key={i} className="h-full w-24 bg-white/20 mx-1 rounded-b-lg transform translate-y-[-20%]"></div>
               ))}
             </div>
             
-            {/* Professional team representation */}
+            {/* Professional team representation - reduced opacity */}
             <div className="absolute bottom-0 left-0 right-0 flex justify-center">
               <div className="relative h-72 w-full max-w-5xl">
                 {/* Stylized desk/table */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-12 bg-white/10 rounded-t-md backdrop-blur-sm"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-12 bg-white/8 rounded-t-md backdrop-blur-sm"></div>
                 
-                {/* Team silhouettes with glow effect */}
+                {/* Team silhouettes with glow effect - reduced opacity */}
                 <div className="absolute bottom-12 left-0 right-0 flex justify-around items-end">
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.1 }}
-                    className="w-16 h-40 bg-gradient-to-t from-gold-400/50 to-white/20 rounded-t-full relative overflow-hidden backdrop-blur-sm"
+                    className="w-16 h-40 bg-gradient-to-t from-gold-400/40 to-white/15 rounded-t-full relative overflow-hidden backdrop-blur-sm"
                   >
-                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/40 mx-auto"></div>
+                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/30 mx-auto"></div>
                   </motion.div>
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="w-16 h-48 bg-gradient-to-t from-gold-400/50 to-white/20 rounded-t-full relative overflow-hidden backdrop-blur-sm"
+                    className="w-16 h-48 bg-gradient-to-t from-gold-400/40 to-white/15 rounded-t-full relative overflow-hidden backdrop-blur-sm"
                   >
-                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/40 mx-auto"></div>
+                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/30 mx-auto"></div>
                   </motion.div>
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="w-16 h-44 bg-gradient-to-t from-gold-400/50 to-white/20 rounded-t-full relative overflow-hidden backdrop-blur-sm"
+                    className="w-16 h-44 bg-gradient-to-t from-gold-400/40 to-white/15 rounded-t-full relative overflow-hidden backdrop-blur-sm"
                   >
-                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/40 mx-auto"></div>
+                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/30 mx-auto"></div>
                   </motion.div>
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="w-16 h-52 bg-gradient-to-t from-gold-400/50 to-white/20 rounded-t-full relative overflow-hidden backdrop-blur-sm"
+                    className="w-16 h-52 bg-gradient-to-t from-gold-400/40 to-white/15 rounded-t-full relative overflow-hidden backdrop-blur-sm"
                   >
-                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/40 mx-auto"></div>
+                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/30 mx-auto"></div>
                   </motion.div>
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="w-16 h-40 bg-gradient-to-t from-gold-400/50 to-white/20 rounded-t-full relative overflow-hidden backdrop-blur-sm"
+                    className="w-16 h-40 bg-gradient-to-t from-gold-400/40 to-white/15 rounded-t-full relative overflow-hidden backdrop-blur-sm"
                   >
-                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/40 mx-auto"></div>
+                    <div className="absolute inset-x-0 top-6 h-5 w-5 rounded-full bg-white/30 mx-auto"></div>
                   </motion.div>
                 </div>
                 
                 {/* Conference room table effect */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-4 bg-white/5 rounded-t-full blur-sm"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-4 bg-white/3 rounded-t-full blur-sm"></div>
                 
                 {/* Abstract computer/device representations */}
                 <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-4/5 flex justify-around">
                   {[...Array(5)].map((_, i) => (
-                    <div key={i} className="w-8 h-3 bg-gold-400/30 rounded-sm blur-[1px]"></div>
+                    <div key={i} className="w-8 h-3 bg-gold-400/20 rounded-sm blur-[1px]"></div>
                   ))}
                 </div>
               </div>
             </div>
             
-            {/* Light beams effect */}
+            {/* Light beams effect - reduced opacity */}
             <div className="absolute inset-0">
-              <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-gold-400/20 to-transparent transform rotate-[-30deg] blur-md"></div>
-              <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-gold-400/20 to-transparent transform rotate-[20deg] blur-md"></div>
+              <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-gold-400/15 to-transparent transform rotate-[-30deg] blur-md"></div>
+              <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-gold-400/15 to-transparent transform rotate-[20deg] blur-md"></div>
             </div>
           </div>
         </div>
         
-        {/* Subtle overlay for better text readability - darkened more */}
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
+        {/* Subtle overlay for better text readability - darkened significantly */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
       </div>
 
       {/* Decorative elements */}
@@ -181,7 +181,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg text-gray-300 max-w-xl"
+              className="text-lg text-white max-w-xl"
             >
               At Allied Pro Staffing, we specialize in connecting the
               right people with the right opportunities, delivering tailored
