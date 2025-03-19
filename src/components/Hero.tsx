@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -11,8 +12,8 @@ const Hero = () => {
   const fallbackImagePath = 'lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
 
   useEffect(() => {
-    const loadImage = (path) => {
-      return new Promise((resolve, reject) => {
+    const loadImage = (path: string) => {
+      return new Promise<string>((resolve, reject) => {
         const img = new Image();
         img.src = path;
         img.onload = () => resolve(path);
@@ -24,7 +25,7 @@ const Hero = () => {
     console.log('Attempting to load primary image:', primaryImagePath);
     
     loadImage(primaryImagePath)
-      .then(path => {
+      .then((path: string) => {
         console.log('Successfully loaded primary image');
         setCurrentImagePath(path);
         setImageLoaded(true);
@@ -36,7 +37,7 @@ const Hero = () => {
         console.log('Attempting to load fallback image:', fallbackImagePath);
         return loadImage(fallbackImagePath);
       })
-      .then(path => {
+      .then((path?: string) => {
         if (path) {
           console.log('Successfully loaded fallback image');
           setCurrentImagePath(path);
