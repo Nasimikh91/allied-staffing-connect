@@ -36,15 +36,15 @@ const partners: Partner[] = [
   },
   { 
     name: "JP Morgan", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/JPMorgan_Chase_Logo_2008_1.svg/2560px-JPMorgan_Chase_Logo_2008_1.svg.png" 
+    logoUrl: "https://logohistory.net/wp-content/uploads/2023/05/JP-Morgan-Logo.png" 
   },
   { 
     name: "CrowdStrike", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Crowdstrike-logo-2022.svg/2560px-Crowdstrike-logo-2022.svg.png" 
+    logoUrl: "https://www.crowdstrike.com/wp-content/uploads/2022/01/CS-Logo-500px-Black.png" 
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Charles_Schwab_Corporation_logo.svg/2560px-Charles_Schwab_Corporation_logo.svg.png" 
+    logoUrl: "https://content.schwabplatinum.com/web/retail/public/rewards/src/assets/logo_landing_page.svg" 
   },
   { 
     name: "Goldman Sachs", 
