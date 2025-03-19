@@ -63,8 +63,37 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-black">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="services" className="py-20 bg-black relative overflow-hidden">
+      {/* Abstract background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
+        
+        {/* Animated dots pattern */}
+        <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
+          {Array.from({ length: 40 }).map((_, i) => (
+            <motion.div 
+              key={i}
+              className="w-2 h-2 bg-gold-400 rounded-full"
+              initial={{ opacity: 0.1 }}
+              animate={{ opacity: [0.1, 0.3, 0.1] }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity, 
+                delay: i * 0.1 % 3,
+                ease: "easeInOut" 
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -108,9 +137,18 @@ const Services = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-900 p-8 rounded-xl border border-gray-800 shadow-sm hover:shadow-md transition-shadow group"
+              className="bg-gray-900 p-8 rounded-xl border border-gray-800 shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
             >
-              <div className="mb-6 p-4 bg-black/40 rounded-lg inline-block group-hover:bg-black/60 transition-colors">
+              {/* Card glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Card corner accent */}
+              <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gold-400/10 rotate-45 origin-bottom-left transform translate-y-[-50%] translate-x-[50%]"></div>
+              </div>
+              
+              <div className="mb-6 p-4 bg-black/40 rounded-lg inline-block group-hover:bg-black/60 transition-colors relative">
+                <div className="absolute inset-0 bg-gold-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
@@ -130,9 +168,10 @@ const Services = () => {
         >
           <a
             href="/#contact"
-            className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg"
+            className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg relative overflow-hidden group"
           >
-            Discuss Your Staffing Needs
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-gold-300 to-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative z-10">Discuss Your Staffing Needs</span>
           </a>
         </motion.div>
       </div>

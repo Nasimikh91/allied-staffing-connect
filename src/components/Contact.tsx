@@ -43,8 +43,45 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-secondary">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-secondary relative overflow-hidden">
+      {/* Background visual elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary-500/5 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary-600/5 to-transparent"></div>
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
+          backgroundSize: '20px 20px' 
+        }}></div>
+        
+        {/* Animated elements */}
+        {Array.from({ length: 8 }).map((_, index) => (
+          <motion.div
+            key={index}
+            className="absolute bg-primary-400/10 rounded-full"
+            style={{
+              width: Math.random() * 100 + 50,
+              height: Math.random() * 100 + 50,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              x: [0, Math.random() * 30 - 15],
+              y: [0, Math.random() * 30 - 15],
+              scale: [1, Math.random() * 0.2 + 0.9, 1],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: Math.random() * 5 + 5,
+              ease: "easeInOut",
+              yoyo: true,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -84,14 +121,18 @@ const Contact = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="bg-background rounded-xl shadow-sm p-8 border border-gray-800">
-              <h3 className="text-xl font-semibold text-foreground mb-6">
+            <div className="bg-background rounded-xl shadow-sm p-8 border border-gray-800 relative overflow-hidden">
+              {/* Card visual effects */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-600/5 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary-400/5 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+              
+              <h3 className="text-xl font-semibold text-foreground mb-6 relative">
                 Contact Information
               </h3>
 
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4">
+              <div className="space-y-6 relative">
+                <div className="flex items-start group">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4 group-hover:bg-primary-900/40 transition-colors duration-300">
                     <MapPin className="h-5 w-5 text-primary-400" />
                   </div>
                   <div>
@@ -103,8 +144,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4">
+                <div className="flex items-start group">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4 group-hover:bg-primary-900/40 transition-colors duration-300">
                     <Phone className="h-5 w-5 text-primary-400" />
                   </div>
                   <div>
@@ -120,8 +161,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4">
+                <div className="flex items-start group">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-900/30 flex items-center justify-center mr-4 group-hover:bg-primary-900/40 transition-colors duration-300">
                     <Mail className="h-5 w-5 text-primary-400" />
                   </div>
                   <div>
@@ -138,18 +179,18 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-10">
+              <div className="mt-10 relative">
                 <h4 className="font-medium text-foreground mb-4">Hours of Operation</h4>
                 <div className="space-y-2">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between group hover:bg-primary-900/10 px-2 py-1 rounded-md transition-colors duration-300">
                     <span className="text-gray-300">Monday - Friday</span>
                     <span className="text-foreground font-medium">9:00 AM - 5:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between group hover:bg-primary-900/10 px-2 py-1 rounded-md transition-colors duration-300">
                     <span className="text-gray-300">Saturday</span>
                     <span className="text-foreground font-medium">Closed</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between group hover:bg-primary-900/10 px-2 py-1 rounded-md transition-colors duration-300">
                     <span className="text-gray-300">Sunday</span>
                     <span className="text-foreground font-medium">Closed</span>
                   </div>
@@ -165,12 +206,16 @@ const Contact = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100 relative overflow-hidden">
+              {/* Form visual effects */}
+              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-gold-200/20 via-gold-400/20 to-gold-200/20"></div>
+              <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-gold-200/10 to-transparent rounded-full"></div>
+              
+              <h3 className="text-xl font-semibold text-gray-900 mb-6 relative">
                 Send Us a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -280,10 +325,11 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={formStatus === 'submitting'}
-                    className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-medium tracking-wide text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-all duration-300 disabled:bg-primary-400 disabled:cursor-not-allowed"
+                    className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-medium tracking-wide text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-all duration-300 disabled:bg-primary-400 disabled:cursor-not-allowed relative overflow-hidden group"
                   >
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-500 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     {formStatus === 'submitting' ? (
-                      <span className="inline-flex items-center">
+                      <span className="inline-flex items-center relative z-10">
                         <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -291,12 +337,12 @@ const Contact = () => {
                         Sending...
                       </span>
                     ) : formStatus === 'success' ? (
-                      <span className="inline-flex items-center">
+                      <span className="inline-flex items-center relative z-10">
                         <CheckCircle className="h-4 w-4 mr-2" />
                         Sent Successfully
                       </span>
                     ) : (
-                      <span className="inline-flex items-center">
+                      <span className="inline-flex items-center relative z-10">
                         <Send className="h-4 w-4 mr-2" />
                         Send Message
                       </span>

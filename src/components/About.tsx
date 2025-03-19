@@ -14,8 +14,40 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="about" className="py-20 bg-gray-900 relative overflow-hidden">
+      {/* Visual elements for the background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-primary-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-0 w-60 h-60 bg-primary-500 rounded-full filter blur-3xl"></div>
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        {/* Animated particles */}
+        {Array.from({ length: 15 }).map((_, index) => (
+          <motion.div
+            key={index}
+            className="absolute w-1.5 h-1.5 bg-primary-400 rounded-full"
+            initial={{ 
+              x: Math.random() * 100 + "%", 
+              y: Math.random() * 100 + "%",
+              opacity: 0.2
+            }}
+            animate={{ 
+              opacity: [0.2, 0.5, 0.2],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 3 + (Math.random() * 2),
+              ease: "easeInOut",
+              delay: index * 0.1
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -47,9 +79,17 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-start"
+                    className="flex items-start group"
                   >
-                    <CheckCircle className="h-5 w-5 text-gold-400 mt-0.5 mr-2 flex-shrink-0" />
+                    <div className="relative">
+                      <CheckCircle className="h-5 w-5 text-gold-400 mt-0.5 mr-2 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                      <motion.div 
+                        className="absolute -inset-1 bg-gold-400/20 rounded-full z-[-1] opacity-0 group-hover:opacity-100"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </div>
                     <span className="text-gray-300">{value}</span>
                   </motion.div>
                 ))}
@@ -64,9 +104,10 @@ const About = () => {
             >
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-all duration-300 relative overflow-hidden group"
               >
-                Get In Touch
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-gold-300 to-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="relative z-10">Get In Touch</span>
               </a>
             </motion.div>
           </motion.div>
@@ -79,18 +120,64 @@ const About = () => {
             className="relative"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-gold-900/20 to-gold-700/10 rounded-3xl transform rotate-3"></div>
-            <div className="relative bg-black p-8 rounded-3xl shadow-lg border border-gray-800">
-              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden mb-8 bg-gray-900">
-                <div className="w-full h-full bg-gray-900 rounded-xl flex items-center justify-center">
-                  <span className="text-gold-400 font-medium">Company Image</span>
+            
+            {/* Floating elements in the background */}
+            <motion.div 
+              className="absolute -top-4 -right-4 w-16 h-16 bg-gold-400/10 rounded-full"
+              animate={{ y: ["-5%", "5%"], x: ["2%", "-2%"] }}
+              transition={{ repeat: Infinity, duration: 3, yoyo: 1 }}
+            />
+            <motion.div 
+              className="absolute -bottom-6 left-10 w-20 h-20 bg-gold-400/5 rounded-full"
+              animate={{ y: ["8%", "-8%"], x: ["-3%", "3%"] }}
+              transition={{ repeat: Infinity, duration: 3.5, yoyo: 1 }}
+            />
+            
+            <div className="relative bg-black p-8 rounded-3xl shadow-lg border border-gray-800 overflow-hidden">
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gold-600/5 to-transparent"></div>
+              
+              <div className="relative rounded-xl overflow-hidden mb-8 bg-gray-900 aspect-w-16 aspect-h-9">
+                <div className="w-full h-full bg-gray-900 flex items-center justify-center overflow-hidden">
+                  {/* Abstract workspace illustration */}
+                  <div className="absolute inset-0 opacity-40">
+                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-gold-900/20 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black to-transparent"></div>
+                    
+                    {/* Building silhouettes */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1/3">
+                      <div className="absolute bottom-0 left-1/4 w-10 h-20 bg-gray-800 rounded-t"></div>
+                      <div className="absolute bottom-0 left-1/3 w-16 h-24 bg-gray-800 rounded-t"></div>
+                      <div className="absolute bottom-0 left-1/2 w-20 h-28 bg-gray-800 rounded-t"></div>
+                      <div className="absolute bottom-0 right-1/4 w-12 h-16 bg-gray-800 rounded-t"></div>
+                    </div>
+                    
+                    {/* People silhouettes */}
+                    <motion.div 
+                      className="absolute bottom-3 left-1/4 w-5 h-5 bg-gold-400/50 rounded-full"
+                      animate={{ x: ["-50%", "50%"] }}
+                      transition={{ duration: 5, repeat: Infinity, yoyo: true }}
+                    />
+                    <motion.div 
+                      className="absolute bottom-3 left-2/3 w-4 h-4 bg-gold-400/50 rounded-full"
+                      animate={{ x: ["30%", "-30%"] }}
+                      transition={{ duration: 7, repeat: Infinity, yoyo: true }}
+                    />
+                    <motion.div 
+                      className="absolute bottom-3 left-1/2 w-4 h-4 bg-gold-400/50 rounded-full"
+                      animate={{ x: ["-20%", "20%"] }}
+                      transition={{ duration: 6, repeat: Infinity, yoyo: true }}
+                    />
+                  </div>
+                  <span className="text-gold-400 font-medium relative z-10">Professional Environment</span>
                 </div>
               </div>
 
-              <div>
+              <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-white mb-4">Why Choose Us?</h3>
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
+                  <div className="flex items-start group">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3 group-hover:bg-gold-400/30 transition-colors duration-300">
                       1
                     </div>
                     <div>
@@ -101,8 +188,8 @@ const About = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
+                  <div className="flex items-start group">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3 group-hover:bg-gold-400/30 transition-colors duration-300">
                       2
                     </div>
                     <div>
@@ -113,8 +200,8 @@ const About = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
+                  <div className="flex items-start group">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3 group-hover:bg-gold-400/30 transition-colors duration-300">
                       3
                     </div>
                     <div>
@@ -125,8 +212,8 @@ const About = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3">
+                  <div className="flex items-start group">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gold-400/20 flex items-center justify-center text-gold-400 font-bold text-sm mr-3 group-hover:bg-gold-400/30 transition-colors duration-300">
                       4
                     </div>
                     <div>
