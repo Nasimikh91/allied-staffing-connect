@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 const CookiePolicy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Set the body background to light theme
+    document.body.className = 'bg-white text-gray-900';
   }, []);
 
   return (
@@ -15,15 +17,15 @@ const CookiePolicy = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-background text-foreground"
+      className="min-h-screen bg-white text-gray-900"
     >
       <Navbar />
       <div className="container mx-auto px-6 lg:px-8 py-32">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">Cookie Policy</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Cookie Policy</h1>
           
-          <div className="prose prose-invert max-w-none">
-            <p className="text-gray-400 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
+          <div className="prose max-w-none">
+            <p className="text-gray-600 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
             <p className="mb-4">

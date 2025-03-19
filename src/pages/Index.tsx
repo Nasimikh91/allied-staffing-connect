@@ -15,8 +15,8 @@ import { motion } from "framer-motion";
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Set the body background to dark theme
-    document.body.className = 'bg-background text-foreground';
+    // Set the body background to light theme
+    document.body.className = 'bg-white text-gray-900';
   }, []);
 
   const HomePage = () => (

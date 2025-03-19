@@ -38,7 +38,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          ? "bg-white/90 backdrop-blur-md border-b border-gray-200"
           : "bg-transparent"
       )}
     >
@@ -52,7 +52,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <Link to="/" className="flex items-center">
-              <div className="mr-3 h-10 w-10 text-primary-400">
+              <div className="mr-3 h-12 w-12 text-primary-600">
                 <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path 
                     d="M12 2L4 6V12C4 15.31 7.58 20 12 22C16.42 20 20 15.31 20 12V6L12 2Z" 
@@ -65,17 +65,13 @@ const Navbar = () => {
                   />
                   <path 
                     d="M9 14L10.5 9.5L12 14L15 9L13.5 14.5H9Z" 
-                    fill="#121212" 
+                    fill="#FFFFFF" 
                   />
                 </svg>
               </div>
-              <div>
-                <div className="text-xl font-bold text-primary-400">
-                  Allied Pro
-                </div>
-                <div className="text-xl font-medium text-gray-400">
-                  Staffing
-                </div>
+              <div className="flex items-center">
+                <span className="text-xl font-bold text-primary-600">Allied Pro</span>
+                <span className="text-xl font-medium text-gray-600 ml-2">Staffing</span>
               </div>
             </Link>
           </motion.div>
@@ -97,7 +93,7 @@ const Navbar = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-primary-400 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-500 after:transition-all"
+                    className="text-gray-700 hover:text-primary-600 font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-500 after:transition-all"
                   >
                     {link.name}
                   </a>
@@ -110,7 +106,7 @@ const Navbar = () => {
               >
                 <a
                   href="/#contact"
-                  className="inline-flex items-center justify-center px-5 py-2.5 font-medium tracking-tight text-background bg-primary-600 hover:bg-primary-700 rounded-md transition-colors duration-300"
+                  className="inline-flex items-center justify-center px-5 py-2.5 font-medium tracking-tight text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors duration-300"
                 >
                   Contact Us
                   <ChevronRight className="ml-1 h-4 w-4" />
@@ -123,7 +119,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-gray-300 hover:text-primary-400 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors"
               aria-label="Toggle Menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -140,7 +136,7 @@ const Navbar = () => {
           opacity: isOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="md:hidden overflow-hidden bg-secondary"
+        className="md:hidden overflow-hidden bg-white"
       >
         {isOpen && (
           <div className="px-6 py-4 space-y-2 shadow-inner">
@@ -149,7 +145,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block py-3 text-gray-300 hover:text-primary-400 font-medium border-b border-gray-800"
+                className="block py-3 text-gray-700 hover:text-primary-600 font-medium border-b border-gray-200"
               >
                 {link.name}
               </a>
@@ -157,7 +153,7 @@ const Navbar = () => {
             <a
               href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center mt-4 px-5 py-3 font-medium text-background bg-primary-600 hover:bg-primary-700 rounded-md transition-colors"
+              className="flex items-center justify-center mt-4 px-5 py-3 font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors"
             >
               Contact Us
               <ChevronRight className="ml-1 h-4 w-4" />
