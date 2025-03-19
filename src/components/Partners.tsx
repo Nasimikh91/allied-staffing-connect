@@ -29,9 +29,10 @@ const partners: Partner[] = [
   },
   { 
     name: "Ernest Capital", 
+    logoUrl: "", // Empty string to satisfy TypeScript requirements
     isText: true,
     textColor: "#5A3D2B",
-    bgColor: "#F7EDE2"
+    bgColor: "#ffffff" // Changed to white for better visibility
   },
   { 
     name: "JP Morgan", 
@@ -77,7 +78,7 @@ const Partners = () => {
             <CarouselContent>
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="basis-full">
-                  <Card className="bg-gray-800 border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <Card className="bg-white border-gray-300 hover:border-gray-400 transition-all duration-300">
                     <CardContent className="p-6 h-40 flex items-center justify-center">
                       <div className="relative h-full w-full flex items-center justify-center">
                         {partner.isText ? (
@@ -96,7 +97,7 @@ const Partners = () => {
                           <img 
                             src={partner.logoUrl} 
                             alt={`${partner.name} logo`} 
-                            className="max-h-full max-w-full object-contain"
+                            className="max-h-full max-w-full object-contain" 
                             style={{ maxWidth: "80%" }}
                           />
                         )}
