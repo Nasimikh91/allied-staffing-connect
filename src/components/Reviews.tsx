@@ -44,7 +44,7 @@ const reviews: Review[] = [
   {
     name: "Jessica Benker",
     position: "Project Manager",
-    company: "JP Morgan, Chase & Co",
+    company: "Visa",
     content: "Allied IT Consultant's talent acquisition team understood exactly what skills we needed for our complex projects. The consultants they placed have consistently delivered high-quality work and met critical deadlines.",
     rating: 5,
   },
@@ -114,8 +114,8 @@ const Reviews = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="relative static" />
-              <CarouselNext className="relative static" />
+              <CarouselPrevious className="relative static bg-primary text-primary-foreground hover:bg-primary/90" />
+              <CarouselNext className="relative static bg-primary text-primary-foreground hover:bg-primary/90" />
             </div>
           </Carousel>
         </div>

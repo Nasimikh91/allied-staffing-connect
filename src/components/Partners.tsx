@@ -35,16 +35,16 @@ const partners: Partner[] = [
     bgColor: "#ffffff" // White background for better visibility
   },
   { 
-    name: "JP Morgan", 
-    logoUrl: "https://logohistory.net/wp-content/uploads/2023/05/JP-Morgan-Logo.png" 
+    name: "Visa", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" 
   },
   { 
     name: "CrowdStrike", 
-    logoUrl: "https://www.crowdstrike.com/wp-content/uploads/2022/01/CS-Logo-500px-Black.png" 
+    logoUrl: "https://worldvectorlogo.com/logo/crowdstrike-1" 
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "https://content.schwabplatinum.com/web/retail/public/rewards/src/assets/logo_landing_page.svg" 
+    logoUrl: "https://download.logo.wine/logo/Charles_Schwab_Corporation/Charles_Schwab_Corporation-Logo.wine.png" 
   },
   { 
     name: "Goldman Sachs", 
