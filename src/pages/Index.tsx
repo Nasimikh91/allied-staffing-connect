@@ -13,14 +13,10 @@ const Index = () => {
     // Force scroll to top and ensure images load
     window.scrollTo(0, 0);
     
-    // Preload the hero background image with the original image
-    const preloadBackgroundImage = () => {
-      const img = new Image();
-      img.src = '/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png';
-      console.log('Preloading background image:', img.src);
-    };
-    
-    preloadBackgroundImage();
+    // Preload the hero background image
+    const img = new Image();
+    img.src = '/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png';
+    console.log('Preloading background image:', img.src);
     
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
