@@ -26,5 +26,6 @@ export default defineConfig(({ mode }) => ({
     assetsDir: "assets",
     sourcemap: false,
     minify: true,
+    emptyOutDir: true, // Ensure clean builds
   },
 }));

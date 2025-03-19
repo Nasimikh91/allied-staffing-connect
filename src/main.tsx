@@ -4,4 +4,6 @@ import App from './App.tsx'
 import './index.css'
 
 // Mount the app to the DOM
-createRoot(document.getElementById("root")!).render(<App />);
+const rootElement = document.getElementById("root");
+if (!rootElement) throw new Error('Failed to find the root element');
+createRoot(rootElement).render(<App />);
