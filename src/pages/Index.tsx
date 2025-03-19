@@ -13,7 +13,7 @@ const Index = () => {
     // Force scroll to top and ensure images load
     window.scrollTo(0, 0);
     
-    // Preload the hero background image
+    // Preload the hero background image with absolute path
     const img = new Image();
     img.src = '/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png';
     console.log('Preloading background image:', img.src);

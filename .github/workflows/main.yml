@@ -1,3 +1,4 @@
+
 name: Deploy to GitHub Pages
 
 on:
@@ -17,20 +18,20 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm run build
+      - name: Build
+        run: npm run build
 
-      - name: Configure base path for Vite
+      - name: Ensure CNAME file exists
         run: |
-          echo "Adding base path to index.html"
-          sed -i 's|<script type="module" src="/src/main.tsx"></script>|<script type="module" src="./src/main.tsx"></script>|g' dist/index.html
-
-      # peaceiris/actions-gh-pages automatically creates the CNAME based on this input
+          echo "alliedprostaffing.com" > dist/CNAME
+          
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          cname: alliedprostaffing.com
