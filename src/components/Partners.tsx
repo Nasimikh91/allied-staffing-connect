@@ -13,6 +13,9 @@ import { Card, CardContent } from "@/components/ui/card";
 interface Partner {
   name: string;
   logoUrl: string;
+  isText?: boolean;
+  textColor?: string;
+  bgColor?: string;
 }
 
 const partners: Partner[] = [
@@ -26,19 +29,21 @@ const partners: Partner[] = [
   },
   { 
     name: "Ernest Capital", 
-    logoUrl: "https://cdn-icons-png.flaticon.com/512/5968/5968290.png" 
+    isText: true,
+    textColor: "#5A3D2B",
+    bgColor: "#F7EDE2"
   },
   { 
-    name: "JP Morgan Chase & Co", 
-    logoUrl: "https://logodownload.org/wp-content/uploads/2019/07/jp-morgan-logo-1.png" 
+    name: "JP Morgan", 
+    logoUrl: "public/lovable-uploads/397abe62-c464-4ee5-a332-6022b04faf44.png" 
   },
   { 
     name: "CrowdStrike", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Crowdstrike-logo-red.svg" 
+    logoUrl: "public/lovable-uploads/318bfc0c-fe3e-4178-a0d0-ed237df4cbc0.png" 
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Charles_Schwab_Corporation_logo.svg/2560px-Charles_Schwab_Corporation_logo.svg.png" 
+    logoUrl: "public/lovable-uploads/4bd5c7a1-4677-4328-a120-c42d51cfe870.png" 
   },
   { 
     name: "Goldman Sachs", 
@@ -71,16 +76,30 @@ const Partners = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="basis-full">
                   <Card className="bg-gray-800 border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <CardContent className="p-6 h-40 flex items-center justify-center">
                       <div className="relative h-full w-full flex items-center justify-center">
-                        <img 
-                          src={partner.logoUrl} 
-                          alt={`${partner.name} logo`} 
-                          className="max-h-full max-w-full object-contain filter brightness-0 invert"
-                          style={{ maxWidth: "80%" }}
-                        />
+                        {partner.isText ? (
+                          <div 
+                            className="h-full w-full flex items-center justify-center rounded-md"
+                            style={{ backgroundColor: partner.bgColor }}
+                          >
+                            <h3 
+                              className="text-2xl font-serif font-bold"
+                              style={{ color: partner.textColor }}
+                            >
+                              {partner.name}
+                            </h3>
+                          </div>
+                        ) : (
+                          <img 
+                            src={partner.logoUrl} 
+                            alt={`${partner.name} logo`} 
+                            className="max-h-full max-w-full object-contain"
+                            style={{ maxWidth: "80%" }}
+                          />
+                        )}
                         <span className="sr-only">{partner.name}</span>
                       </div>
                     </CardContent>
