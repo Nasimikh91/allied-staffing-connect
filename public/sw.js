@@ -1,6 +1,6 @@
 
 // Service Worker for better offline experience and reliability
-const CACHE_NAME = 'allied-pro-staffing-v2'; // Updated cache version
+const CACHE_NAME = 'allied-pro-staffing-v3'; // Updated cache version
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,6 +8,7 @@ const urlsToCache = [
   '/src/index.css',
   '/favicon.ico',
   '/logo-favicon.svg',
+  '/lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png',
   '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png'
 ];
 
@@ -21,42 +22,56 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Opened cache, caching resources');
-        return cache.addAll(urlsToCache).catch(error => {
-          console.error('Failed to cache some resources:', error);
-        });
+        // Cache each resource individually to prevent one failure from stopping all caching
+        return Promise.allSettled(
+          urlsToCache.map(url => 
+            cache.add(url).catch(error => {
+              console.error(`Failed to cache resource: ${url}`, error);
+            })
+          )
+        );
       })
   );
 });
 
-// Fetch event - serve from cache when possible
+// Fetch event - serve from cache when possible, with special handling for images
 self.addEventListener('fetch', event => {
-  // Special handling for image requests
+  // Image request handling with network-first strategy for uploaded images
   if (event.request.url.includes('/lovable-uploads/')) {
     console.log('Image request detected:', event.request.url);
     event.respondWith(
       fetch(event.request)
         .then(response => {
-          // Clone the response for caching
-          const responseToCache = response.clone();
-          
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              console.log('Caching image resource:', event.request.url);
-              cache.put(event.request, responseToCache);
-            })
-            .catch(err => console.error('Error caching image:', err));
-            
+          // If the network request was successful, clone and cache the response
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                console.log('Caching image resource:', event.request.url);
+                cache.put(event.request, responseToCache);
+              })
+              .catch(err => console.error('Error caching image:', err));
+          }
           return response;
         })
         .catch(() => {
-          console.log('Falling back to cached image');
-          return caches.match(event.request);
+          console.log('Network fetch failed, trying cache for:', event.request.url);
+          return caches.match(event.request)
+            .then(cachedResponse => {
+              if (cachedResponse) {
+                console.log('Found image in cache:', event.request.url);
+                return cachedResponse;
+              }
+              console.log('Image not in cache either:', event.request.url);
+              // If there's no cached response, return a fallback image or empty response
+              return caches.match('/logo-favicon.svg');
+            });
         })
     );
     return;
   }
   
-  // Regular fetch handling for other resources
+  // Regular fetch handling for other resources (cache-first strategy)
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -66,8 +81,8 @@ self.addEventListener('fetch', event => {
         }
         
         // Not in cache - fetch and cache for next time
-        return fetch(event.request).then(
-          response => {
+        return fetch(event.request)
+          .then(response => {
             // Check if we received a valid response
             if(!response || response.status !== 200 || response.type !== 'basic') {
               return response;
@@ -78,21 +93,21 @@ self.addEventListener('fetch', event => {
             
             caches.open(CACHE_NAME)
               .then(cache => {
-                // Don't cache API calls or external resources
-                if (event.request.url.indexOf('http') === 0) {
-                  cache.put(event.request, responseToCache);
-                }
+                // Cache the fetched resource
+                cache.put(event.request, responseToCache);
               });
               
             return response;
-          }
-        );
-      })
-      .catch(() => {
-        // If both cache and network fail, show fallback content
-        if (event.request.mode === 'navigate') {
-          return caches.match('/index.html');
-        }
+          })
+          .catch(error => {
+            console.error('Network fetch failed for:', event.request.url, error);
+            // If fetch fails for navigation, return the cached homepage
+            if (event.request.mode === 'navigate') {
+              return caches.match('/index.html');
+            }
+            // For other resources, just let the error propagate
+            throw error;
+          });
       })
   );
 });
@@ -119,7 +134,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Optional: Listen for messages from the client
+// Listen for messages from the client
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

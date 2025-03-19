@@ -1,22 +1,57 @@
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  
+  // Use the new image that was just uploaded
+  const backgroundImage = '/lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png';
+  // Fallback to a previous image if available
+  const fallbackImage = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
 
   useEffect(() => {
-    // Preload the hero image and set state when loaded
+    console.log('Hero component mounted, loading image:', backgroundImage);
+    
+    // Try to load the primary image
     const img = new Image();
-    img.src = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
+    img.src = backgroundImage;
+    
     img.onload = () => {
-      console.log('Hero background image loaded successfully');
+      console.log('Background image loaded successfully:', backgroundImage);
       setImageLoaded(true);
+      setImageError(false);
     };
+    
     img.onerror = (e) => {
-      console.error('Failed to load hero background image:', e);
+      console.error('Failed to load primary background image, trying fallback');
+      setImageError(true);
+      
+      // Try fallback image
+      const fallbackImg = new Image();
+      fallbackImg.src = fallbackImage;
+      
+      fallbackImg.onload = () => {
+        console.log('Fallback image loaded successfully');
+        setImageLoaded(true);
+      };
+      
+      fallbackImg.onerror = () => {
+        console.error('Both primary and fallback images failed to load');
+      };
+    };
+    
+    // Clean up function
+    return () => {
+      img.onload = null;
+      img.onerror = null;
     };
   }, []);
+
+  // Choose which image to display based on load status
+  const currentBackgroundImage = imageError ? fallbackImage : backgroundImage;
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -24,12 +59,12 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{ 
-          backgroundImage: `url('/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png')`,
+          backgroundImage: imageLoaded ? `url('${currentBackgroundImage}')` : 'none',
           opacity: imageLoaded ? 1 : 0,
           transition: 'opacity 0.5s ease-in'
         }}
       >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
       </div>
 
       {/* Fallback background color while image loads */}

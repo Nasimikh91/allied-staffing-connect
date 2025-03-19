@@ -25,15 +25,19 @@ const Index = () => {
     // Force scroll to top and ensure images load
     window.scrollTo(0, 0);
     
-    // Preload the hero background image with proper path
-    const img = new Image();
-    img.src = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
-    console.log('Preloading background image:', img.src);
+    // Preload both potential background images
+    const primaryImg = new Image();
+    primaryImg.src = '/lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png';
+    console.log('Preloading primary background image:', primaryImg.src);
+    
+    const fallbackImg = new Image();
+    fallbackImg.src = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
+    console.log('Preloading fallback background image:', fallbackImg.src);
     
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
     
-    // Add service worker registration for better offline support
+    // Add service worker registration with better error handling
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
@@ -49,7 +53,7 @@ const Index = () => {
             }
           })
           .catch(error => {
-            console.log('Service Worker registration failed:', error);
+            console.error('Service Worker registration failed:', error);
           });
       });
       
