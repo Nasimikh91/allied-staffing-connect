@@ -69,7 +69,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <span className="text-xl font-bold text-gold-400">Allied Pro Staffing</span>
+              <span className="text-2xl font-bold text-gold-400">Allied Pro Staffing</span>
             </Link>
           </motion.div>
 

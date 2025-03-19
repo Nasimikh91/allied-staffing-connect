@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Send, CheckCircle } from "lucide-react";
@@ -202,12 +203,12 @@ const Contact = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100 relative overflow-hidden">
+            <div className="bg-background rounded-xl shadow-sm p-8 border border-gray-800 relative overflow-hidden">
               {/* Form visual effects */}
-              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-gold-200/20 via-gold-400/20 to-gold-200/20"></div>
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-gold-200/10 to-transparent rounded-full"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-600/5 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary-400/5 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-6 relative">
+              <h3 className="text-xl font-semibold text-foreground mb-6 relative">
                 Send Us a Message
               </h3>
 
@@ -216,7 +217,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-300 mb-1"
                     >
                       Your Name
                     </label>
@@ -226,7 +227,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 text-gray-900 border border-gray-200 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="block w-full px-4 py-3 bg-gray-900/70 text-white border border-gray-700 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="John Doe"
                       required
                     />
@@ -235,7 +236,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-300 mb-1"
                     >
                       Email Address
                     </label>
@@ -245,7 +246,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 text-gray-900 border border-gray-200 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="block w-full px-4 py-3 bg-gray-900/70 text-white border border-gray-700 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="john@example.com"
                       required
                     />
@@ -256,7 +257,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-300 mb-1"
                     >
                       Phone Number
                     </label>
@@ -266,7 +267,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 text-gray-900 border border-gray-200 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="block w-full px-4 py-3 bg-gray-900/70 text-white border border-gray-700 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="(123) 456-7890"
                     />
                   </div>
@@ -274,7 +275,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-300 mb-1"
                     >
                       Subject
                     </label>
@@ -283,7 +284,7 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 text-gray-900 border border-gray-200 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="block w-full px-4 py-3 bg-gray-900/70 text-white border border-gray-700 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       required
                     >
                       <option value="" disabled>
@@ -301,7 +302,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-300 mb-1"
                   >
                     Your Message
                   </label>
@@ -311,7 +312,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="block w-full px-4 py-3 text-gray-900 border border-gray-200 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    className="block w-full px-4 py-3 bg-gray-900/70 text-white border border-gray-700 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                     placeholder="How can we help you?"
                     required
                   ></textarea>
@@ -321,7 +322,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={formStatus === 'submitting'}
-                    className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-medium tracking-wide text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-all duration-300 disabled:bg-primary-400 disabled:cursor-not-allowed relative overflow-hidden group"
+                    className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-medium tracking-wide text-black bg-primary-600 hover:bg-primary-700 rounded-md transition-all duration-300 disabled:bg-primary-400 disabled:cursor-not-allowed relative overflow-hidden group"
                   >
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-500 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     {formStatus === 'submitting' ? (

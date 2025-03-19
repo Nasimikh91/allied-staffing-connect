@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -131,7 +132,7 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-block text-sm font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-6">
+              <span className="inline-block text-md font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-6">
                 Premier Staffing Solutions
               </span>
             </motion.div>
@@ -140,7 +141,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
             >
               Connecting{" "}
               <span className="text-gold-400">Exceptional Talent</span> with
@@ -151,7 +152,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg text-gray-300 max-w-xl"
+              className="text-lg text-white max-w-xl"
             >
               At Allied Pro Staffing, we specialize in connecting the
               right people with the right opportunities, delivering tailored
@@ -172,7 +173,7 @@ const Hero = () => {
               </a>
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-gold-400 border border-gold-700/30 hover:bg-gold-900/20 rounded-md transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 font-medium tracking-wide text-gold-400 bg-gray-800 border border-gold-700/30 hover:bg-gold-900/20 rounded-md transition-all duration-300"
               >
                 Contact Us
               </a>
