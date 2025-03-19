@@ -25,6 +25,9 @@ const Index = () => {
     // Force scroll to top
     window.scrollTo(0, 0);
     
+    // Set the document title to reflect the correct company name
+    document.title = "Allied IT Consultant | IT Services & Staffing Solutions";
+    
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
     
