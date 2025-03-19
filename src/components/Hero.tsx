@@ -1,20 +1,38 @@
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  useEffect(() => {
+    // Preload the background image
+    const img = new Image();
+    img.src = "/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png";
+    img.onload = () => {
+      console.log("Background image loaded successfully");
+      setImageLoaded(true);
+    };
+    img.onerror = (e) => {
+      console.error("Failed to load background image:", e);
+    };
+  }, []);
+
+  const backgroundStyle = {
+    backgroundImage: `url('/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat"
+  };
+
   return (
     <section 
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
-      style={{
-        backgroundImage: "url('/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
-      }}
+      style={backgroundStyle}
     >
       {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-white/80 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 to-white/60 z-0"></div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-primary-100 rounded-full filter blur-3xl opacity-30 z-0"></div>
