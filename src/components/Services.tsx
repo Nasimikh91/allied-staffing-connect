@@ -70,6 +70,9 @@ const Services = () => {
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-600 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gold-300 rounded-full filter blur-3xl"></div>
         
+        {/* Blue contrast extension to this section - new addition */}
+        <div className="absolute top-0 w-full h-1/3 bg-gradient-to-b from-blue-900/20 to-transparent"></div>
+        
         {/* Animated dots pattern */}
         <div className="absolute inset-0 flex flex-wrap gap-4 opacity-15">
           {Array.from({ length: 40 }).map((_, i) => (
@@ -109,7 +112,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             Comprehensive Staffing Solutions
           </motion.h2>

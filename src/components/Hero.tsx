@@ -41,7 +41,7 @@ const Hero = () => {
         style={{ opacity: scrollOpacity }}
       >
         {/* Professional workspace environment - darkened significantly */}
-        <div className="w-full h-full bg-gradient-to-r from-blue-900/95 via-indigo-900/95 to-gray-900/95">
+        <div className="w-full h-full bg-gradient-to-r from-blue-900/98 via-indigo-900/98 to-gray-900/98">
           {/* Abstract lighting and atmosphere - reduced opacity */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-400/25 blur-3xl"></div>
@@ -140,7 +140,7 @@ const Hero = () => {
         </div>
         
         {/* Subtle overlay for better text readability - darkened significantly */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]"></div>
       </div>
 
       {/* Decorative elements */}
