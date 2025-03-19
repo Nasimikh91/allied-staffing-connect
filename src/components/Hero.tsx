@@ -8,14 +8,42 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image container */}
       <div className="absolute inset-0 z-0">
-        {/* Main image - modern workspace with professionals */}
-        <img
-          src="lovable-uploads/c98c8297-eb07-40bc-a31c-dc6515989ea3.png"
-          alt="Professional staffing workspace environment"
-          className="w-full h-full object-cover"
-        />
+        {/* Professional workspace environment */}
+        <div className="w-full h-full bg-gradient-to-r from-blue-900 to-gray-900">
+          {/* We're using a CSS gradient background with overlay elements to create a unique workspace feel */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-blue-400/30 blur-xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-indigo-500/20 blur-xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-purple-400/15 blur-xl"></div>
+          </div>
+          
+          {/* Abstract office elements */}
+          <div className="absolute inset-0">
+            {/* Office grid pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="h-full w-full" 
+                style={{
+                  backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
+                  backgroundSize: '50px 50px'
+                }}>
+              </div>
+            </div>
+            
+            {/* Abstract team silhouettes */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-5xl">
+              <div className="flex justify-center space-x-12 opacity-20">
+                <div className="w-16 h-32 bg-white/40 rounded-t-full"></div>
+                <div className="w-16 h-40 bg-white/40 rounded-t-full"></div>
+                <div className="w-16 h-36 bg-white/40 rounded-t-full"></div>
+                <div className="w-16 h-44 bg-white/40 rounded-t-full"></div>
+                <div className="w-16 h-32 bg-white/40 rounded-t-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Decorative elements */}

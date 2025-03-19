@@ -22,17 +22,8 @@ const Index = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Force scroll to top and ensure images load
+    // Force scroll to top
     window.scrollTo(0, 0);
-    
-    // Explicitly preload background images
-    const preloadImage = (src) => {
-      const img = new Image();
-      img.src = src;
-      console.log('Preloading image:', src);
-    };
-    
-    preloadImage('lovable-uploads/c98c8297-eb07-40bc-a31c-dc6515989ea3.png');
     
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
