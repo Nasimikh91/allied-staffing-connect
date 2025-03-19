@@ -4,24 +4,18 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  // Simplified approach - directly use the image as a background with content overlay
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image container */}
       <div className="absolute inset-0 z-0">
-        {/* Main image with fallback */}
+        {/* Main image */}
         <img
-          src="lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png"
-          alt="Background"
+          src="lovable-uploads/76997e81-ebe5-4361-a39a-d308c3819a56.png"
+          alt="Find the right people"
           className="w-full h-full object-cover"
-          onError={(e) => {
-            console.log("Primary image failed to load, switching to fallback");
-            // @ts-ignore - typescript doesn't know about currentTarget.src
-            e.currentTarget.src = "lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png";
-          }}
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
       </div>
 
       {/* Decorative elements */}

@@ -32,8 +32,7 @@ const Index = () => {
       console.log('Preloading image:', src);
     };
     
-    preloadImage('lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png');
-    preloadImage('lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png');
+    preloadImage('lovable-uploads/76997e81-ebe5-4361-a39a-d308c3819a56.png');
     
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
