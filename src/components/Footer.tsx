@@ -1,6 +1,5 @@
-
 import React from "react";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -30,20 +29,25 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <div>
-                  <div className="text-xl font-bold text-primary-400">
-                    Allied Pro
-                  </div>
-                  <div className="text-xl font-medium text-gray-400">
-                    Staffing
-                  </div>
-                </div>
+                <span className="text-xl font-bold text-primary-400">Allied Pro Staffing</span>
               </Link>
               <p className="mt-4 text-gray-400">
                 Connecting exceptional talent with industry leaders for over a
                 decade.
               </p>
+              <div className="mt-4">
+                <a
+                  href="https://alliedprostaffing.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-primary-400 hover:text-primary-300 transition-colors w-fit"
+                >
+                  <span>alliedprostaffing.com</span>
+                  <ExternalLink className="ml-1 h-4 w-4" />
+                </a>
+              </div>
             </div>
+            
             <div className="flex space-x-4">
               <a
                 href="#"

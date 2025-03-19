@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <Link to="/" className="flex items-center">
-              <div className="mr-3 h-12 w-12 text-primary-600">
+              <div className="mr-3 h-14 w-14 text-primary-600">
                 <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path 
                     d="M12 2L4 6V12C4 15.31 7.58 20 12 22C16.42 20 20 15.31 20 12V6L12 2Z" 
@@ -69,10 +69,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <div className="flex items-center">
-                <span className="text-xl font-bold text-primary-600">Allied Pro</span>
-                <span className="text-xl font-medium text-gray-600 ml-2">Staffing</span>
-              </div>
+              <span className="text-xl font-bold text-primary-600">Allied Pro Staffing</span>
             </Link>
           </motion.div>
 
@@ -99,6 +96,21 @@ const Navbar = () => {
                   </a>
                 </motion.li>
               ))}
+              <motion.li
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+              >
+                <a
+                  href="https://alliedprostaffing.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors mr-4"
+                >
+                  Visit Site
+                  <ExternalLink className="ml-1 h-4 w-4" />
+                </a>
+              </motion.li>
               <motion.li
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
