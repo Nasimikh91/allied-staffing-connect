@@ -8,7 +8,7 @@ const urlsToCache = [
   '/src/index.css',
   '/favicon.ico',
   '/logo-favicon.svg',
-  '/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png'
+  '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png'
 ];
 
 // Install event - cache critical assets

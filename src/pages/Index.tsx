@@ -27,7 +27,7 @@ const Index = () => {
     
     // Preload the hero background image with proper path
     const img = new Image();
-    img.src = '/lovable-uploads/1e9a6991-2300-4fb0-8944-af387d5fb32d.png';
+    img.src = '/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
     console.log('Preloading background image:', img.src);
     
     // Set the body background to light theme

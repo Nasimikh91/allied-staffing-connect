@@ -5,7 +5,15 @@ import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{ backgroundImage: "url('/lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+      </div>
+
       {/* Decorative elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
@@ -79,16 +87,16 @@ const Hero = () => {
           >
             {/* Decorative elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-gold-700/5 rounded-3xl transform rotate-1"></div>
-            <div className="relative bg-gray-900 p-8 md:p-12 rounded-3xl shadow-lg border border-gray-800">
+            <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-lg border border-gray-800">
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-4">
-                  <div className="bg-black h-32 rounded-lg flex items-center justify-center p-6 border border-gray-800">
+                  <div className="bg-black/70 h-32 rounded-lg flex items-center justify-center p-6 border border-gray-800">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gold-400">150+</div>
                       <div className="text-sm text-gray-300">Successful Placements</div>
                     </div>
                   </div>
-                  <div className="bg-black h-48 rounded-lg flex items-center justify-center p-6 border border-gray-800">
+                  <div className="bg-black/70 h-48 rounded-lg flex items-center justify-center p-6 border border-gray-800">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gold-400">95%</div>
                       <div className="text-sm text-gray-300">Client Satisfaction</div>
@@ -96,7 +104,7 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="bg-black h-48 rounded-lg flex items-center justify-center p-6 border border-gray-800">
+                  <div className="bg-black/70 h-48 rounded-lg flex items-center justify-center p-6 border border-gray-800">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gold-400">10</div>
                       <div className="text-sm text-gray-300">Years Experience</div>
