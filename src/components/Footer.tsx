@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MapPin, Phone, Mail, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -183,6 +184,11 @@ const Footer = () => {
                 >
                   info@alliedprostaffing.com
                 </a>
+              </li>
+              <li className="text-gray-400 mt-2">
+                <p className="font-medium mb-1">Hours:</p>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                <p>Saturday - Sunday: Closed</p>
               </li>
             </ul>
           </div>
