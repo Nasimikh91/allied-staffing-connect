@@ -21,7 +21,7 @@ const partners: Partner[] = [
     logoUrl: "https://cdn-icons-png.flaticon.com/512/6295/6295417.png" 
   },
   { 
-    name: "JP Morgan, Chase & Co", 
+    name: "JP Morgan Chase & Co", 
     logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/af/J.P._Morgan_Logo_2008_1.svg" 
   },
   { 
@@ -73,7 +73,7 @@ const Partners = () => {
                   <img 
                     src={partner.logoUrl} 
                     alt={`${partner.name} logo`} 
-                    className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    className="max-h-full max-w-full object-contain filter invert opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
                   <span className="sr-only">{partner.name}</span>
                 </div>
