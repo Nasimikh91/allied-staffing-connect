@@ -3,6 +3,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 interface Review {
   name: string;
@@ -75,38 +82,42 @@ const Reviews = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-            >
-              <Card className="h-full bg-gray-900 border-gray-800 hover:border-gold-700/50 transition-all duration-300">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className="mb-4 flex items-center">
-                    <Quote className="text-gold-400 mr-2 h-6 w-6" />
+        <div className="max-w-4xl mx-auto">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {reviews.map((review, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card className="bg-gray-900 border-gray-800 hover:border-gold-700/50 transition-all duration-300">
+                      <CardContent className="p-8 flex flex-col">
+                        <div className="mb-4 flex items-center">
+                          <Quote className="text-gold-400 mr-2 h-6 w-6" />
+                        </div>
+                        <p className="text-gray-300 mb-6 text-lg">{review.content}</p>
+                        <div className="flex items-center mt-auto">
+                          <div>
+                            <div className="flex mb-1">
+                              {[...Array(review.rating)].map((_, i) => (
+                                <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
+                              ))}
+                            </div>
+                            <h4 className="font-semibold text-white text-xl">{review.name}</h4>
+                            <p className="text-sm text-gray-400">
+                              {review.position} at {review.company}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                  <p className="text-gray-300 mb-6 flex-grow">{review.content}</p>
-                  <div className="flex items-center mt-auto">
-                    <div>
-                      <div className="flex mb-1">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
-                        ))}
-                      </div>
-                      <h4 className="font-semibold text-white">{review.name}</h4>
-                      <p className="text-sm text-gray-400">
-                        {review.position} at {review.company}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-8 gap-4">
+              <CarouselPrevious className="relative static position-static" />
+              <CarouselNext className="relative static position-static" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>

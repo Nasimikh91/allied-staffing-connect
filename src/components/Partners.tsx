@@ -4,18 +4,42 @@ import { motion } from "framer-motion";
 
 interface Partner {
   name: string;
-  logo?: string; // Optional logo path
+  logoUrl: string;
 }
 
 const partners: Partner[] = [
-  { name: "IBM" },
-  { name: "Bank of America" },
-  { name: "Ernest Capital" },
-  { name: "JP Morgan, Chase & Co" },
-  { name: "CrowdStrike" },
-  { name: "Charles Schwab" },
-  { name: "Goldman Sachs" },
-  { name: "Expedia Group" },
+  { 
+    name: "IBM", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" 
+  },
+  { 
+    name: "Bank of America", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/2/20/Bank_of_America_logo.svg" 
+  },
+  { 
+    name: "Ernest Capital", 
+    logoUrl: "https://cdn-icons-png.flaticon.com/512/6295/6295417.png" 
+  },
+  { 
+    name: "JP Morgan, Chase & Co", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/af/J.P._Morgan_Logo_2008_1.svg" 
+  },
+  { 
+    name: "CrowdStrike", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/15/Crowdstrike.svg" 
+  },
+  { 
+    name: "Charles Schwab", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Charles_Schwab_Corporation_logo.svg" 
+  },
+  { 
+    name: "Goldman Sachs", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/6/61/Goldman_Sachs.svg" 
+  },
+  { 
+    name: "Expedia Group", 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Expedia_2012_logo.svg" 
+  },
 ];
 
 const Partners = () => {
@@ -35,7 +59,7 @@ const Partners = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {partners.map((partner, index) => (
             <motion.div
               key={index}
@@ -43,10 +67,16 @@ const Partners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 * index }}
-              className="flex justify-center items-center"
             >
-              <div className="bg-gray-800 hover:bg-gray-750 transition-colors px-6 py-8 rounded-lg w-full h-32 flex items-center justify-center border border-gray-700">
-                <span className="text-xl font-semibold text-white text-center">{partner.name}</span>
+              <div className="bg-gray-800 hover:bg-gray-750 hover:shadow-lg transition-all duration-300 px-6 py-8 rounded-lg h-40 flex items-center justify-center border border-gray-700">
+                <div className="relative h-full w-full flex items-center justify-center p-4">
+                  <img 
+                    src={partner.logoUrl} 
+                    alt={`${partner.name} logo`} 
+                    className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <span className="sr-only">{partner.name}</span>
+                </div>
               </div>
             </motion.div>
           ))}
