@@ -1,78 +1,34 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [currentImagePath, setCurrentImagePath] = useState('');
-  
-  // Define image paths - ensure they're absolutely correct
-  const primaryImagePath = 'lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png';
-  const fallbackImagePath = 'lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png';
-
-  useEffect(() => {
-    const loadImage = (path: string) => {
-      return new Promise<string>((resolve, reject) => {
-        const img = new Image();
-        img.src = path;
-        img.onload = () => resolve(path);
-        img.onerror = () => reject(new Error(`Failed to load: ${path}`));
-      });
-    };
-
-    // Try to load primary image first, then fallback
-    console.log('Attempting to load primary image:', primaryImagePath);
-    
-    loadImage(primaryImagePath)
-      .then((path: string) => {
-        console.log('Successfully loaded primary image');
-        setCurrentImagePath(path);
-        setImageLoaded(true);
-      })
-      .catch(error => {
-        console.error('Primary image failed to load:', error.message);
-        
-        // Try fallback image
-        console.log('Attempting to load fallback image:', fallbackImagePath);
-        return loadImage(fallbackImagePath);
-      })
-      .then((path?: string) => {
-        if (path) {
-          console.log('Successfully loaded fallback image');
-          setCurrentImagePath(path);
-          setImageLoaded(true);
-        }
-      })
-      .catch(error => {
-        console.error('All images failed to load:', error.message);
-        // Set a default solid color background instead
-        setImageLoaded(true);
-      });
-  }, []);
-
+  // Simplified approach - directly use the image as a background with content overlay
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-        style={{ 
-          backgroundImage: imageLoaded && currentImagePath ? `url('${currentImagePath}')` : 'none',
-          opacity: imageLoaded ? 1 : 0,
-          transition: 'opacity 0.5s ease-in'
-        }}
-      >
+      {/* Background image container */}
+      <div className="absolute inset-0 z-0">
+        {/* Main image with fallback */}
+        <img
+          src="lovable-uploads/80c83d07-8d5e-4076-bf55-1909f6f3e2cb.png"
+          alt="Background"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            console.log("Primary image failed to load, switching to fallback");
+            // @ts-ignore - typescript doesn't know about currentTarget.src
+            e.currentTarget.src = "lovable-uploads/562340c9-d9eb-40ac-a0a3-8a67bbfb5fe3.png";
+          }}
+        />
+        {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
       </div>
-
-      {/* Fallback background color while image loads */}
-      <div className="absolute inset-0 bg-black z-[-1]"></div>
 
       {/* Decorative elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-gold-600/5 rounded-full filter blur-3xl opacity-20 z-0"></div>
 
-      {/* Rest of the Hero component */}
+      {/* Content overlay */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
