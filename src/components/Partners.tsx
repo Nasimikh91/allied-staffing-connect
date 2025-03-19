@@ -10,39 +10,35 @@ interface Partner {
 const partners: Partner[] = [
   { 
     name: "IBM", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" 
+    logoUrl: "https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/01_8-bar-positive.svg" 
   },
   { 
     name: "Bank of America", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/2/20/Bank_of_America_logo.svg" 
+    logoUrl: "https://logos-world.net/wp-content/uploads/2020/11/Bank-of-America-Logo.png" 
   },
   { 
     name: "Ernest Capital", 
-    // Using a standard finance logo icon that's easily visible on dark background
-    logoUrl: "https://cdn-icons-png.flaticon.com/512/1048/1048277.png" 
+    logoUrl: "https://img.freepik.com/premium-vector/finance-logo-with-letter-e-gold-color_278222-562.jpg" 
   },
   { 
     name: "JP Morgan Chase & Co", 
-    // Using a cleaner version of the logo that works better with invert filter
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/4/42/JPMorgan_Chase_Logo_2008.svg" 
+    logoUrl: "https://logos-world.net/wp-content/uploads/2021/02/JP-Morgan-Chase-Logo.png" 
   },
   { 
     name: "CrowdStrike", 
-    // Using a simpler version of the logo
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Crowdstrike_logo.svg" 
+    logoUrl: "https://www.crowdstrike.com/wp-content/uploads/2022/01/CS_LOCKUP_COLOR_POSITIVE.svg" 
   },
   { 
     name: "Charles Schwab", 
-    // Using a cleaner version of the logo that works better with invert filter
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/8/82/Charles_Schwab_Corporation_logo.svg" 
+    logoUrl: "https://www.schwab.com/resource-center/insights/themes/custom/schwab/img/logo-blue.svg" 
   },
   { 
     name: "Goldman Sachs", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/6/61/Goldman_Sachs.svg" 
+    logoUrl: "https://www.goldmansachs.com/our-firm/images/logo.svg" 
   },
   { 
     name: "Expedia Group", 
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Expedia_2012_logo.svg" 
+    logoUrl: "https://www.expediagroup.com/wp-content/uploads/2022/03/EG_Mark_Blue_RGB.png" 
   },
 ];
 
@@ -77,7 +73,7 @@ const Partners = () => {
                   <img 
                     src={partner.logoUrl} 
                     alt={`${partner.name} logo`} 
-                    className="max-h-full max-w-full object-contain filter invert opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    className="max-h-full max-w-full object-contain"
                   />
                   <span className="sr-only">{partner.name}</span>
                 </div>
