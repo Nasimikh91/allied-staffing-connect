@@ -8,10 +8,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image container */}
       <div className="absolute inset-0 z-0">
-        {/* Main image */}
+        {/* Main image - modern workspace with professionals */}
         <img
-          src="lovable-uploads/76997e81-ebe5-4361-a39a-d308c3819a56.png"
-          alt="Find the right people"
+          src="lovable-uploads/c98c8297-eb07-40bc-a31c-dc6515989ea3.png"
+          alt="Professional staffing workspace environment"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for better text readability */}

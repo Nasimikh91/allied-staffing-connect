@@ -1,6 +1,6 @@
 
 // Service Worker for better offline experience and reliability
-const CACHE_NAME = 'allied-pro-staffing-v5'; // Increment cache version
+const CACHE_NAME = 'allied-pro-staffing-v6'; // Increment cache version
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,7 +8,7 @@ const urlsToCache = [
   '/src/index.css',
   '/favicon.ico',
   '/logo-favicon.svg',
-  'lovable-uploads/76997e81-ebe5-4361-a39a-d308c3819a56.png'
+  'lovable-uploads/c98c8297-eb07-40bc-a31c-dc6515989ea3.png'
 ];
 
 // Install event - cache critical assets
