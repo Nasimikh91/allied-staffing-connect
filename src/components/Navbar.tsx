@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, ChevronRight, ExternalLink } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
@@ -96,21 +96,6 @@ const Navbar = () => {
                   </a>
                 </motion.li>
               ))}
-              <motion.li
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
-              >
-                <a
-                  href="https://alliedprostaffing.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors mr-4"
-                >
-                  Visit Site
-                  <ExternalLink className="ml-1 h-4 w-4" />
-                </a>
-              </motion.li>
               <motion.li
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

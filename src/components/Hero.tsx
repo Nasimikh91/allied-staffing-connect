@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80')] bg-cover bg-center opacity-15"
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80')] bg-cover bg-center opacity-15"
         ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-white/90"></div>
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary-100 rounded-full filter blur-3xl opacity-30"></div>
@@ -104,7 +104,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-4">
                   <div className="bg-primary-50 h-48 rounded-lg flex items-center justify-center p-6 border border-primary-100">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-600">7</div>
+                      <div className="text-3xl font-bold text-primary-600">10</div>
                       <div className="text-sm text-gray-700">Years Experience</div>
                     </div>
                   </div>
