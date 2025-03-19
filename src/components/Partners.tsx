@@ -35,7 +35,8 @@ const partners: Partner[] = [
     logoUrl: "", // Empty string to satisfy TypeScript requirements
     isText: true,
     textColor: "#5A3D2B",
-    bgColor: "#ffffff" // White background for better visibility
+    bgColor: "#ffffff", // White background for better visibility
+    scale: 1.4 // Make Ernest Capital text 40% larger
   },
   { 
     name: "Visa", 
@@ -104,7 +105,10 @@ const Partners = () => {
                           >
                             <h3 
                               className="text-2xl font-serif font-bold"
-                              style={{ color: partner.textColor }}
+                              style={{ 
+                                color: partner.textColor,
+                                transform: partner.scale ? `scale(${partner.scale})` : 'none'
+                              }}
                             >
                               {partner.name}
                             </h3>
