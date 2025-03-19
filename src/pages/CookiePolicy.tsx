@@ -1,11 +1,11 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const CookiePolicy = () => {
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
@@ -29,7 +29,7 @@ const CookiePolicy = () => {
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
             <p className="mb-4">
-              This Cookie Policy explains how Allied Pro Staffing ("we," "our," or "us") uses cookies and similar technologies on our website to enhance your browsing experience.
+              This Cookie Policy explains how Allied IT Consultant ("we," "our," or "us") uses cookies and similar technologies on our website to enhance your browsing experience.
             </p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">2. What Are Cookies?</h2>
@@ -81,11 +81,11 @@ const CookiePolicy = () => {
               If you have questions about our Cookie Policy, please contact us at:
             </p>
             <p className="mb-4">
-              Allied Pro Staffing<br />
+              Allied IT Consultant<br />
               6228 Crooked Creek Drive<br />
               Mason, OH 45040<br />
-              Phone: +1 (513) 216-2663<br />
-              Email: info@alliedprostaffing.com
+              Phone: +1 (513) 299-6363<br />
+              Email: info@allieditconsultant.net
             </p>
           </div>
         </div>

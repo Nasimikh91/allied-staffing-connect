@@ -1,11 +1,12 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
+  // Use React.useEffect instead of directly importing useEffect
+  React.useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
@@ -29,7 +30,7 @@ const PrivacyPolicy = () => {
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
             <p className="mb-4">
-              At Allied Pro Staffing ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              At Allied IT Consultant ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">2. Information We Collect</h2>
@@ -89,11 +90,11 @@ const PrivacyPolicy = () => {
               If you have questions or concerns about this Privacy Policy, please contact us at:
             </p>
             <p className="mb-4">
-              Allied Pro Staffing<br />
+              Allied IT Consultant<br />
               6228 Crooked Creek Drive<br />
               Mason, OH 45040<br />
-              Phone: +1 (513) 216-2663<br />
-              Email: info@alliedprostaffing.com
+              Phone: +1 (513) 299-6363<br />
+              Email: info@allieditconsultant.net
             </p>
           </div>
         </div>

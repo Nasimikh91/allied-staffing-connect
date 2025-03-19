@@ -1,12 +1,14 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const TermsOfService = () => {
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
+    // Set the body background for consistency
+    document.body.className = 'bg-background text-foreground';
   }, []);
 
   return (
@@ -27,12 +29,12 @@ const TermsOfService = () => {
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">1. Acceptance of Terms</h2>
             <p className="mb-4">
-              By accessing or using the Allied Pro Staffing website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.
+              By accessing or using the Allied IT Consultant website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.
             </p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">2. Description of Services</h2>
             <p className="mb-4">
-              Allied Pro Staffing provides staffing, recruiting, and placement services to connect job seekers with potential employers. Our services include permanent placement, contract staffing, executive search, and professional recruiting.
+              Allied IT Consultant provides staffing, recruiting, and placement services to connect job seekers with potential employers. Our services include permanent placement, contract staffing, executive search, and professional recruiting.
             </p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">3. User Accounts</h2>
@@ -54,7 +56,7 @@ const TermsOfService = () => {
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">5. Intellectual Property</h2>
             <p className="mb-4">
-              All content on our website, including text, graphics, logos, images, and software, is the property of Allied Pro Staffing or its licensors and is protected by copyright and other intellectual property laws.
+              All content on our website, including text, graphics, logos, images, and software, is the property of Allied IT Consultant or its licensors and is protected by copyright and other intellectual property laws.
             </p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">6. Disclaimer of Warranties</h2>
@@ -64,7 +66,7 @@ const TermsOfService = () => {
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">7. Limitation of Liability</h2>
             <p className="mb-4">
-              To the maximum extent permitted by law, Allied Pro Staffing shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
+              To the maximum extent permitted by law, Allied IT Consultant shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
             </p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">8. Modifications to Terms</h2>
@@ -77,11 +79,11 @@ const TermsOfService = () => {
               If you have questions about these Terms of Service, please contact us at:
             </p>
             <p className="mb-4">
-              Allied Pro Staffing<br />
+              Allied IT Consultant<br />
               6228 Crooked Creek Drive<br />
               Mason, OH 45040<br />
-              Phone: +1 (513) 216-2663<br />
-              Email: info@alliedprostaffing.com
+              Phone: +1 (513) 299-6363<br />
+              Email: info@allieditconsultant.net
             </p>
           </div>
         </div>
