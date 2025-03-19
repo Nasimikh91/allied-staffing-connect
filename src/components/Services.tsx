@@ -65,8 +65,8 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-blue-950 relative overflow-hidden">
       {/* Abstract background elements */}
-      <div className="absolute inset-0 opacity-15">
-        <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold-400 rounded-full filter blur-3xl"></div>
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute -top-10 -left-10 w-64 h-64 bg-blue-600 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-700 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-blue-800 rounded-full filter blur-3xl"></div>
         
@@ -75,7 +75,7 @@ const Services = () => {
           {Array.from({ length: 40 }).map((_, i) => (
             <motion.div 
               key={i}
-              className="w-2 h-2 bg-gold-400 rounded-full"
+              className="w-2 h-2 bg-blue-400 rounded-full"
               initial={{ opacity: 0.1 }}
               animate={{ opacity: [0.1, 0.3, 0.1] }}
               transition={{ 
@@ -100,7 +100,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block text-md font-medium text-gold-400 px-3 py-1 bg-gold-400/10 rounded-full mb-5"
+            className="inline-block text-md font-medium text-gold-400 px-3 py-1 bg-blue-900 rounded-full mb-5"
           >
             Our Services
           </motion.span>
@@ -137,17 +137,17 @@ const Services = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-900 p-8 rounded-xl border border-gray-800 shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
+              className="bg-blue-900 p-8 rounded-xl border border-blue-800 shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
             >
               {/* Card glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Card corner accent */}
               <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gold-400/10 rotate-45 origin-bottom-left transform translate-y-[-50%] translate-x-[50%]"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-blue-700/20 rotate-45 origin-bottom-left transform translate-y-[-50%] translate-x-[50%]"></div>
               </div>
               
-              <div className="mb-6 p-4 bg-black/40 rounded-lg inline-block group-hover:bg-black/60 transition-colors relative">
+              <div className="mb-6 p-4 bg-blue-950/80 rounded-lg inline-block group-hover:bg-blue-950 transition-colors relative">
                 <div className="absolute inset-0 bg-gold-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {service.icon}
               </div>
