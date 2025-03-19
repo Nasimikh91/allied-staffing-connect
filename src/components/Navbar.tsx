@@ -4,10 +4,19 @@ import { motion } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isMobile = useIsMobile();
+
+  // Close menu when changing from mobile to desktop
+  useEffect(() => {
+    if (!isMobile && isOpen) {
+      setIsOpen(false);
+    }
+  }, [isMobile, isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +33,21 @@ const Navbar = () => {
     };
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    if (!isOpen) return;
+    
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.mobile-menu') && !target.closest('.menu-button')) {
+        setIsOpen(false);
+      }
+    };
+    
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, [isOpen]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/#about" },
@@ -31,7 +55,10 @@ const Navbar = () => {
     { name: "Contact", href: "/#contact" },
   ];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsOpen(!isOpen);
+  };
 
   return (
     <nav
@@ -42,8 +69,8 @@ const Navbar = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container px-6 lg:px-8 mx-auto">
-        <div className="flex items-center justify-between h-20">
+      <div className="container px-4 lg:px-8 mx-auto">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -52,7 +79,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <Link to="/" className="flex items-center">
-              <div className="mr-3 h-14 w-14 text-gold-400">
+              <div className="mr-2 h-10 w-10 md:h-14 md:w-14 text-gold-400">
                 <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path 
                     d="M12 2L4 6V12C4 15.31 7.58 20 12 22C16.42 20 20 15.31 20 12V6L12 2Z" 
@@ -69,7 +96,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <span className="text-2xl font-bold text-gold-400">Allied Pro Staffing</span>
+              <span className="text-xl md:text-2xl font-bold text-gold-400 truncate">Allied Pro Staffing</span>
             </Link>
           </motion.div>
 
@@ -125,7 +152,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-gold-400 transition-colors"
+              className="text-white hover:text-gold-400 transition-colors p-2 menu-button"
               aria-label="Toggle Menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -134,7 +161,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - improved for better mobile UX */}
       <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={{
@@ -142,7 +169,8 @@ const Navbar = () => {
           opacity: isOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="md:hidden overflow-hidden bg-black"
+        className="md:hidden overflow-hidden bg-black mobile-menu"
+        style={{ touchAction: "pan-y" }}
       >
         {isOpen && (
           <div className="px-6 py-4 space-y-2 shadow-inner">
@@ -152,7 +180,7 @@ const Navbar = () => {
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-3 text-white hover:text-gold-400 font-medium border-b border-gray-800"
+                  className="block py-3 text-white hover:text-gold-400 font-medium border-b border-gray-800 active:bg-gray-900 transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -161,7 +189,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-3 text-white hover:text-gold-400 font-medium border-b border-gray-800"
+                  className="block py-3 text-white hover:text-gold-400 font-medium border-b border-gray-800 active:bg-gray-900 transition-colors"
                 >
                   {link.name}
                 </a>
@@ -170,7 +198,7 @@ const Navbar = () => {
             <a
               href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center mt-4 px-5 py-3 font-medium text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-colors"
+              className="flex items-center justify-center mt-4 px-5 py-3 font-medium text-black bg-gold-400 hover:bg-gold-500 rounded-md transition-colors active:bg-gold-600"
             >
               Contact Us
               <ChevronRight className="ml-1 h-4 w-4" />

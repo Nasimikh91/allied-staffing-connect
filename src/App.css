@@ -1,22 +1,50 @@
 
-/* Remove default margin and padding causing layout issues */
+/* Reset base styles for all devices */
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Override conflicting styles from original App.css */
+/* Force proper viewport behavior on mobile */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+/* Mobile-first root container settings */
 #root {
   max-width: 100%;
   margin: 0;
   padding: 0;
   text-align: left;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available; /* iOS viewport height fix */
 }
 
-/* Keep the rest of your styles */
+/* Fix for iOS height issues */
+html {
+  height: -webkit-fill-available;
+}
+
+/* Fix for input zooming on mobile devices */
+input, select, textarea {
+  font-size: 16px; /* Prevents zoom on focus in iOS */
+}
+
+/* Mobile touch improvements */
+button, a {
+  touch-action: manipulation; /* Improve touch behavior */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+}
+
+/* Keep existing logo styles */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -30,6 +58,7 @@ body, html {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Keep existing animations */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
