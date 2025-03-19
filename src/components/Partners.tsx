@@ -18,35 +18,35 @@ interface Partner {
 const partners: Partner[] = [
   { 
     name: "IBM", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2016/11/IBM-Logo.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" 
   },
   { 
     name: "Bank of America", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2021/05/Bank-of-America-logo.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bank_of_America_logo.svg/2560px-Bank_of_America_logo.svg.png" 
   },
   { 
     name: "Ernest Capital", 
-    logoUrl: "https://t3.ftcdn.net/jpg/03/01/74/00/360_F_301740003_BjWgI7VQ2FZ2qHGdGfqgXM1jG0aLxg2h.jpg" 
+    logoUrl: "https://cdn-icons-png.flaticon.com/512/5968/5968290.png" 
   },
   { 
     name: "JP Morgan Chase & Co", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2016/10/JP-Morgan-Logo.png" 
+    logoUrl: "https://logodownload.org/wp-content/uploads/2019/07/jp-morgan-logo-1.png" 
   },
   { 
     name: "CrowdStrike", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2020/08/CrowdStrike-Logo.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Crowdstrike-logo-red.svg" 
   },
   { 
     name: "Charles Schwab", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2021/05/Charles-Schwab-logo.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Charles_Schwab_Corporation_logo.svg/2560px-Charles_Schwab_Corporation_logo.svg.png" 
   },
   { 
     name: "Goldman Sachs", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2016/11/Goldman-Sachs-Logo.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Goldman_Sachs.svg/2560px-Goldman_Sachs.svg.png" 
   },
   { 
     name: "Expedia Group", 
-    logoUrl: "https://1000logos.net/wp-content/uploads/2017/05/Expedia-Logo.png" 
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Expedia_2012_logo.svg/2560px-Expedia_2012_logo.svg.png" 
   },
 ];
 
@@ -71,14 +71,15 @@ const Partners = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
                   <Card className="bg-gray-800 border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <CardContent className="p-6 h-40 flex items-center justify-center">
                       <div className="relative h-full w-full flex items-center justify-center">
                         <img 
                           src={partner.logoUrl} 
                           alt={`${partner.name} logo`} 
-                          className="max-h-full max-w-full object-contain"
+                          className="max-h-full max-w-full object-contain filter brightness-0 invert"
+                          style={{ maxWidth: "80%" }}
                         />
                         <span className="sr-only">{partner.name}</span>
                       </div>
@@ -88,8 +89,8 @@ const Partners = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="relative static position-static" />
-              <CarouselNext className="relative static position-static" />
+              <CarouselPrevious className="relative static" />
+              <CarouselNext className="relative static" />
             </div>
           </Carousel>
         </div>

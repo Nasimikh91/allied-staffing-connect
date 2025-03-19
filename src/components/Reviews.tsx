@@ -86,7 +86,7 @@ const Reviews = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {reviews.map((review, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={index} className="basis-full">
                   <div className="p-1">
                     <Card className="bg-gray-900 border-gray-800 hover:border-gold-700/50 transition-all duration-300">
                       <CardContent className="p-8 flex flex-col">
@@ -114,8 +114,8 @@ const Reviews = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="relative static position-static" />
-              <CarouselNext className="relative static position-static" />
+              <CarouselPrevious className="relative static" />
+              <CarouselNext className="relative static" />
             </div>
           </Carousel>
         </div>
