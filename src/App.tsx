@@ -3,42 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import { Suspense, lazy, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
-// Use lazy loading for non-critical routes to improve initial load time
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const TermsOfService = lazy(() => import("./pages/TermsOfService"));
-const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
-
-// Create a fallback component for lazy-loaded routes
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-pulse text-center">
-      <p className="text-lg text-gray-600">Loading...</p>
-    </div>
-  </div>
-);
-
-// Error boundary for route errors
-const RouteErrorHandler = () => {
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    // Attempt to recover from route errors by navigating home
-    const handleRouteError = () => {
-      console.error("Route error detected, redirecting to home");
-      navigate("/", { replace: true });
-    };
-    
-    window.addEventListener("routeerror", handleRouteError);
-    return () => window.removeEventListener("routeerror", handleRouteError);
-  }, [navigate]);
-  
-  return null;
-};
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 
 // Configure the query client with retry logic for network issues
 const queryClient = new QueryClient({
@@ -51,30 +22,26 @@ const queryClient = new QueryClient({
   },
 });
 
+// Create a fallback component for loading states
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-pulse text-center">
+      <p className="text-lg text-gray-600">Loading...</p>
+    </div>
+  </div>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <RouteErrorHandler />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/privacy" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <PrivacyPolicy />
-            </Suspense>
-          } />
-          <Route path="/terms" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <TermsOfService />
-            </Suspense>
-          } />
-          <Route path="/cookies" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <CookiePolicy />
-            </Suspense>
-          } />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>

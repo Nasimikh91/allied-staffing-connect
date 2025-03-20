@@ -1,11 +1,11 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const PrivacyPolicy = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
       className="min-h-screen bg-white text-gray-900"
     >
       <Navbar />
-      <div className="container mx-auto px-4 lg:px-8 py-24 md:py-32">
+      <div className="container mx-auto px-4 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold mb-8 text-gray-900">Privacy Policy</h1>
           
@@ -92,8 +92,8 @@ const PrivacyPolicy = () => {
               Allied IT Consultant<br />
               6228 Crooked Creek Drive<br />
               Mason, OH 45040<br />
-              Phone: +1 (513) 299-6363<br />
-              Email: info@allieditconsultant.net
+              Phone: <a href="tel:+15132996363" className="text-blue-600 hover:underline">+1 (513) 299-6363</a><br />
+              Email: <a href="mailto:info@allieditconsultant.net" className="text-blue-600 hover:underline">info@allieditconsultant.net</a>
             </p>
           </div>
         </div>
