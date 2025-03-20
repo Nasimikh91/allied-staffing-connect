@@ -1,11 +1,14 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const TermsOfService = () => {
-  React.useEffect(() => {
+  const isMobile = useIsMobile();
+  
+  useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background for consistency
     document.body.className = 'bg-background text-foreground';
@@ -20,9 +23,9 @@ const TermsOfService = () => {
       className="min-h-screen bg-background text-foreground"
     >
       <Navbar />
-      <div className="container mx-auto px-6 lg:px-8 py-32">
+      <div className="container mx-auto px-4 lg:px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">Terms of Service</h1>
+          <h1 className="text-2xl md:text-4xl font-bold mb-8 text-foreground">Terms of Service</h1>
           
           <div className="prose prose-invert max-w-none">
             <p className="text-gray-400 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
