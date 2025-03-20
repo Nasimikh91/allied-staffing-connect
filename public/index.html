@@ -21,14 +21,27 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+          
+          // Prevent infinite redirects by checking the URL
+          if (!sessionStorage.getItem('redirected')) {
+            sessionStorage.setItem('redirected', 'true');
+            window.history.replaceState(null, null,
+                l.pathname.slice(0, -1) + decoded + l.hash
+            );
+          } else {
+            // If already redirected and still having issues, just go to the homepage
+            window.history.replaceState(null, null, '/');
+            sessionStorage.removeItem('redirected');
+          }
+        } else {
+          // Clear the redirect flag on normal page loads
+          sessionStorage.removeItem('redirected');
         }
       }(window.location))
     </script>
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

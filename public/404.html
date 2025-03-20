@@ -8,18 +8,11 @@
     // Single Page Apps for GitHub Pages
     // MIT License
     // https://github.com/rafgraph/spa-github-pages
-    // This script takes the current url and converts the path and query
-    // string into just a query string, and then redirects the browser
-    // to the new url with only a query string and hash fragment
     
-    // Maximum redirect prevention
-    if (sessionStorage.getItem('redirected')) {
-      window.location.replace('/');
-    } else {
-      sessionStorage.setItem('redirected', 'true');
-      
+    // Only redirect if we're not already on the main page
+    var l = window.location;
+    if (l.pathname !== '/' && !l.search.includes('?/')) {
       var pathSegmentsToKeep = 0;
-      var l = window.location;
       
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +

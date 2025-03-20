@@ -1,14 +1,16 @@
 
-import * as React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const CookiePolicy: React.FC = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';
+    // Set document title
+    document.title = "Cookie Policy | Allied IT Consultant";
   }, []);
 
   return (
