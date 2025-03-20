@@ -1,11 +1,11 @@
 
-import React, { useEffect } from "react";
+import * as React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-const PrivacyPolicy = () => {
-  useEffect(() => {
+const PrivacyPolicy: React.FC = () => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background to light theme
     document.body.className = 'bg-white text-gray-900';

@@ -1,14 +1,14 @@
 
-import React from "react";
+import * as React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-const TermsOfService = () => {
+const TermsOfService: React.FC = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background for consistency
-    document.body.className = 'bg-background text-foreground';
+    document.body.className = 'bg-white text-gray-900';
   }, []);
 
   return (
@@ -17,15 +17,15 @@ const TermsOfService = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-background text-foreground"
+      className="min-h-screen bg-white text-gray-900"
     >
       <Navbar />
-      <div className="container mx-auto px-4 lg:px-8 py-24 md:py-32">
+      <div className="container mx-auto px-4 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-2xl md:text-4xl font-bold mb-8 text-foreground">Terms of Service</h1>
+          <h1 className="text-2xl md:text-4xl font-bold mb-8 text-gray-900">Terms of Service</h1>
           
-          <div className="prose prose-invert max-w-none">
-            <p className="text-gray-400 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
+          <div className="prose max-w-none">
+            <p className="text-gray-600 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
             
             <h2 className="text-xl md:text-2xl font-semibold mt-8 mb-4">1. Acceptance of Terms</h2>
             <p className="mb-4">
@@ -82,8 +82,8 @@ const TermsOfService = () => {
               Allied IT Consultant<br />
               6228 Crooked Creek Drive<br />
               Mason, OH 45040<br />
-              Phone: +1 (513) 299-6363<br />
-              Email: info@allieditconsultant.net
+              Phone: <a href="tel:+15132996363" className="text-blue-600 hover:underline">+1 (513) 299-6363</a><br />
+              Email: <a href="mailto:info@allieditconsultant.net" className="text-blue-600 hover:underline">info@allieditconsultant.net</a>
             </p>
           </div>
         </div>
