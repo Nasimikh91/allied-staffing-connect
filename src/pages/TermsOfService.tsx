@@ -1,14 +1,11 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const TermsOfService = () => {
-  const isMobile = useIsMobile();
-  
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
     // Set the body background for consistency
     document.body.className = 'bg-background text-foreground';
