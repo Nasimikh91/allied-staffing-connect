@@ -20,13 +20,13 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/#about" className="text-gray-400 hover:text-gold-400 transition-colors">About Us</a>
+                <Link to="/#about" className="text-gray-400 hover:text-gold-400 transition-colors">About Us</Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Services</a>
+                <Link to="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Services</Link>
               </li>
               <li>
-                <a href="/#contact" className="text-gray-400 hover:text-gold-400 transition-colors">Contact</a>
+                <Link to="/#contact" className="text-gray-400 hover:text-gold-400 transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
@@ -35,16 +35,16 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 text-white">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">IT Staffing</a>
+                <Link to="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">IT Staffing</Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Contract Recruiting</a>
+                <Link to="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Contract Recruiting</Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Direct Hire</a>
+                <Link to="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Direct Hire</Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Executive Search</a>
+                <Link to="/#services" className="text-gray-400 hover:text-gold-400 transition-colors">Executive Search</Link>
               </li>
             </ul>
           </div>
